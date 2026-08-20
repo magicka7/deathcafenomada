@@ -1,0 +1,30 @@
+---
+const items = [
+  { href: "/recursos/voluntad-anticipada/", label: "Voluntad anticipada" },
+  { href: "/recursos/libros/", label: "Libros recomendados" },
+  { href: "/recursos/enlaces/", label: "Enlaces útiles" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="flex flex-wrap gap-2" aria-label="Subsecciones de Recursos">
+  {
+    items.map((item) => {
+      const isActive = currentPath === item.href;
+      return (
+        <a
+          href={item.href}
+          class:list={[
+            "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+            isActive
+              ? "border-terracotta bg-terracotta text-cream"
+              : "border-sand text-ink-soft hover:border-terracotta hover:text-terracotta-dark",
+          ]}
+        >
+          {item.label}
+        </a>
+      );
+    })
+  }
+</nav>

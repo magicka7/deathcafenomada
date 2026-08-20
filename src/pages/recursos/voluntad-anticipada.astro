@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../components/ResourceSectionNav.astro";
+---
+
+<BaseLayout
+  title="Voluntad anticipada"
+  description="Qué es la voluntad anticipada, la Ley de Voluntad Anticipada en México y su equivalente en Estados Unidos (Advance Directive / Living Will)."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <a href="/recursos/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Todos los recursos
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Voluntad anticipada
+    </h1>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
+
+    <div class="mt-10 space-y-6 text-ink-soft">
+      <p>
+        La <strong class="text-ink">voluntad anticipada</strong> (también
+        llamada directriz médica anticipada) es un documento en el que una
+        persona, estando en pleno uso de sus facultades, deja por escrito qué
+        tipo de cuidados médicos quiere o no recibir si en el futuro no
+        puede expresarlo por sí misma — por ejemplo, si rechaza medidas de
+        soporte vital artificial ante una enfermedad terminal.
+      </p>
+
+      <div class="rounded-2xl border border-sand bg-paper p-6">
+        <h2 class="font-serif-display text-lg font-semibold text-ink">En México</h2>
+        <p class="mt-3">
+          La <strong class="text-ink">Ley de Voluntad Anticipada</strong>{" "}
+          regula este derecho, aunque su aplicación varía porque en México es
+          una materia principalmente de competencia estatal — no todos los
+          estados tienen la misma ley ni el mismo procedimiento. Puedes
+          consultar la información oficial del Instituto Nacional de las
+          Personas Adultas Mayores:
+        </p>
+        <a
+          href="https://www.gob.mx/inapam"
+          class="mt-3 inline-block font-semibold text-terracotta-dark hover:underline"
+          rel="noopener"
+        >
+          gob.mx/inapam →
+        </a>
+      </div>
+
+      <div class="rounded-2xl border border-sand bg-paper p-6">
+        <h2 class="font-serif-display text-lg font-semibold text-ink">
+          En Estados Unidos
+        </h2>
+        <p class="mt-3">
+          El equivalente se conoce como{" "}
+          <strong class="text-ink">Advance Directive</strong> o{" "}
+          <strong class="text-ink">Living Will</strong>. A diferencia de
+          México, donde la Ley de Voluntad Anticipada opera por entidad
+          federativa, en Estados Unidos cada estado tiene su propio marco
+          legal y sus propios formatos — no existe una ley federal única, por
+          lo que el documento válido en un estado puede no tener el mismo
+          reconocimiento en otro. En ambos países, sin embargo, el principio
+          es el mismo: dejar constancia por escrito de tus decisiones
+          médicas antes de que alguien más tenga que tomarlas por ti.
+        </p>
+      </div>
+
+      <p class="text-sm italic">
+        Esta página ofrece una explicación general, no asesoría legal.
+        Consulta a una autoridad de salud o un notario en tu localidad para
+        formalizar tu voluntad anticipada.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Timeline from "../components/Timeline.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+---
+
+<BaseLayout
+  title="Origen del Death Cafe"
+  description="La historia del movimiento Death Cafe: de Bernard Crettaz en Suiza a Jon Underwood en Reino Unido, su expansión internacional y su llegada a México."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Origen del Death Cafe
+    </h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Una idea sencilla —hablar de la muerte con té y pastel— que se convirtió
+      en un movimiento presente en más de 90 países.
+    </p>
+
+    <Timeline>
+      <TimelineItem year="Años 2000" title="Bernard Crettaz y el Café Mortel, Suiza">
+        <p>
+          El sociólogo suizo Bernard Crettaz organiza los primeros
+          "Café Mortel": encuentros públicos para hablar abiertamente de la
+          muerte, como reacción a lo que él llamaba la "pornografía de la
+          muerte" — un tema hecho tabú por la sociedad moderna.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="2011" title="Jon Underwood funda Death Cafe, Reino Unido">
+        <p>
+          Inspirado por el trabajo de Crettaz, el londinense Jon Underwood
+          organiza el primer Death Cafe en su propia casa, junto con su madre
+          Sue Barsky Reid, psicoterapeuta. Juntos definen el modelo: sin
+          agenda, sin fines de lucro, con té y pastel, abierto a cualquiera.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="2011–2013" title="Expansión internacional">
+        <p>
+          El modelo abierto y sin franquicia de Death Cafe —cualquiera puede
+          organizar uno siguiendo una guía compartida— permite que el
+          movimiento se replique rápidamente en Europa, Norteamérica y
+          Australia.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="2017" title="Muere Jon Underwood">
+        <p>
+          Jon Underwood fallece inesperadamente en 2017, pero el modelo que
+          creó —deliberadamente descentralizado— sigue creciendo sin
+          necesitar una organización central que lo dirija.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="2010s" title="Llegada a Latinoamérica y México">
+        <p>
+          El movimiento llega a países de habla hispana, incluido México,
+          donde distintos grupos independientes empiezan a organizar sus
+          propios encuentros, adaptando el formato original a contextos y
+          comunidades locales.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="Hoy" title="Death Cafe Nómada" isLast>
+        <p>
+          Death Cafe Nómada nace en Cholula, Puebla, con una vuelta propia al
+          modelo: en vez de tener una sede fija, el proyecto se mueve entre
+          ciudades de México, llevando la misma mesa, el mismo té y la misma
+          pregunta a cada lugar nuevo.
+        </p>
+      </TimelineItem>
+    </Timeline>
+  </section>
+</BaseLayout>

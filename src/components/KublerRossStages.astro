@@ -1,0 +1,51 @@
+---
+const stages = [
+  {
+    name: "Negación",
+    description:
+      "Una reacción inicial de incredulidad o shock frente a la pérdida, que amortigua el impacto y da tiempo para asimilarlo poco a poco.",
+  },
+  {
+    name: "Ira",
+    description:
+      "El dolor se convierte en enojo — hacia uno mismo, hacia otros, o hacia la injusticia percibida de la pérdida.",
+  },
+  {
+    name: "Negociación",
+    description:
+      "La mente busca acuerdos imposibles o culpa retrospectiva: '¿y si hubiera hecho las cosas distinto?'",
+  },
+  {
+    name: "Depresión",
+    description:
+      "Un momento de tristeza profunda al comprender plenamente la magnitud de la pérdida.",
+  },
+  {
+    name: "Aceptación",
+    description:
+      "No significa estar 'bien' con la pérdida, sino llegar a un lugar de paz con la realidad tal como es.",
+  },
+];
+---
+
+<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+  {
+    stages.map((stage, i) => (
+      <div class="rounded-2xl border border-sand bg-paper p-5">
+        <span class="font-serif-display text-2xl font-semibold text-honey">
+          {String(i + 1).padStart(2, "0")}
+        </span>
+        <h3 class="mt-2 font-serif-display text-lg font-semibold text-ink">
+          {stage.name}
+        </h3>
+        <p class="mt-2 text-sm text-ink-soft">{stage.description}</p>
+      </div>
+    ))
+  }
+</div>
+
+<p class="mt-6 max-w-2xl text-sm text-ink-soft">
+  Kübler-Ross propuso estas etapas a partir de entrevistas con pacientes en
+  fase terminal, no como un proceso lineal u obligatorio. No todas las
+  personas las viven, ni en este orden — son un mapa posible, no una regla.
+</p>

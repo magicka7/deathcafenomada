@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
+---
+
+<BaseLayout
+  title="Página no encontrada"
+  description="La página que buscas no existe."
+>
+  <section class="mx-auto max-w-lg px-4 py-24 text-center sm:px-6">
+    <p class="font-serif-display text-sm uppercase tracking-[0.2em] text-terracotta-dark">404</p>
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink">
+      No encontramos esta página
+    </h1>
+    <p class="mt-4 text-ink-soft">
+      Quizás se movió, como nosotros. Vuelve al inicio para encontrar el
+      próximo encuentro.
+    </p>
+    <div class="mt-8">
+      <CTAButton href="/">Volver al inicio</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CityCard from "../../components/CityCard.astro";
+
+const cities = await getCollection("cities");
+const events = await getCollection("events");
+
+function nextEventFor(citySlug: string) {
+  return events
+    .filter((e) => e.data.citySlug === citySlug && e.data.date.getTime() >= Date.now())
+    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())[0]?.data.date;
+}
+
+const sortedCities = [...cities].sort((a, b) => {
+  if (a.data.isPrimary === b.data.isPrimary) return a.data.name.localeCompare(b.data.name);
+  return a.data.isPrimary ? -1 : 1;
+});
+---
+
+<BaseLayout
+  title="Ciudades"
+  description="Las ciudades de México donde Death Cafe Nómada ha organizado o organizará encuentros, empezando por Cholula, Puebla."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Ciudades y encuentros
+    </h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      No tenemos una sede fija — vamos de ciudad en ciudad. Esta es la lista
+      de dónde hemos estado y dónde estaremos próximamente.
+    </p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {
+        sortedCities.map((city) => (
+          <CityCard city={city} nextEventDate={nextEventFor(city.id)} />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

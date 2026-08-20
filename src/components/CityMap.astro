@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import CityCard from "./CityCard.astro";
+
+const cities = await getCollection("cities");
+const events = await getCollection("events");
+
+function nextEventFor(citySlug: string) {
+  return events
+    .filter((e) => e.data.citySlug === citySlug && e.data.date.getTime() >= Date.now())
+    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())[0]?.data.date;
+}
+
+const sortedCities = [...cities].sort((a, b) => {
+  if (a.data.isPrimary === b.data.isPrimary) return a.data.name.localeCompare(b.data.name);
+  return a.data.isPrimary ? -1 : 1;
+});
+---
+
+<section class="border-y border-sand bg-cream">
+  <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <h2 class="font-serif-display text-2xl font-semibold text-ink sm:text-3xl">
+      Somos nómadas
+    </h2>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Death Cafe Nómada no tiene una sede fija. Nos movemos entre ciudades de
+      México llevando la misma mesa, el mismo té y la misma pregunta. Cholula
+      es nuestra ciudad ancla — el lugar donde empezamos — pero la idea es
+      seguir creciendo, ciudad por ciudad.
+    </p>
+
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      {
+        sortedCities.map((city) => (
+          <CityCard city={city} nextEventDate={nextEventFor(city.id)} />
+        ))
+      }
+    </div>
+  </div>
+</section>

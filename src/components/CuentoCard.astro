@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  cuento: CollectionEntry<"cuentos">;
+}
+
+const { cuento } = Astro.props;
+const { title, author, date, excerpt } = cuento.data;
+
+const formattedDate = date.toLocaleDateString("es-MX", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
+});
+---
+
+<a
+  href={`/cuentos/${cuento.id}/`}
+  class="group block rounded-2xl border border-sand bg-paper p-6 transition-shadow hover:shadow-md"
+>
+  <p class="text-xs text-ink-soft">
+    {author && <span>{author} · </span>}
+    <time datetime={date.toISOString()}>{formattedDate}</time>
+  </p>
+  <h3 class="mt-2 font-serif-display text-xl font-semibold text-ink">{title}</h3>
+  <p class="mt-3 text-sm text-ink-soft">{excerpt}</p>
+  <span class="mt-4 inline-block text-sm font-semibold text-terracotta group-hover:text-terracotta-dark">
+    Leer más →
+  </span>
+</a>

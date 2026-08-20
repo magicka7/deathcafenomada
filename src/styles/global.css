@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@import "@fontsource/fraunces/400.css";
+@import "@fontsource/fraunces/500.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/400-italic.css";
+@import "@fontsource/work-sans/400.css";
+@import "@fontsource/work-sans/500.css";
+@import "@fontsource/work-sans/600.css";
+
+@theme {
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-cream: #fbf4ea;
+  --color-paper: #f3e7d6;
+  --color-sand: #e4d2b8;
+  --color-terracotta: #c1663d;
+  --color-terracotta-dark: #9c4e2c;
+  --color-olive: #7a8450;
+  --color-ink: #3a2e27;
+  --color-ink-soft: #6b5a4e;
+  --color-honey: #e8a945;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+.prose-cuento {
+  max-width: 65ch;
+}
+
+.prose-cuento p {
+  margin-top: 1.25em;
+  line-height: 1.8;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-terracotta);
+  color: var(--color-cream);
+  padding: 0.5rem 1rem;
+  z-index: 50;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}

@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import NextEventBanner from "../components/NextEventBanner.astro";
+import ConceptExplainer from "../components/ConceptExplainer.astro";
+import CityMap from "../components/CityMap.astro";
+import CTAButton from "../components/CTAButton.astro";
+---
+
+<BaseLayout
+  title="Death Cafe Nómada"
+  description="Encuentros abiertos y gratuitos para hablar de la muerte, con té y pastel, sin agenda terapéutica ni religiosa. Empezamos en Cholula, Puebla."
+>
+  <Hero />
+  <NextEventBanner />
+  <ConceptExplainer />
+  <CityMap />
+
+  <section class="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
+    <h2 class="font-serif-display text-2xl font-semibold text-ink sm:text-3xl">
+      ¿Quieres saber de dónde viene todo esto?
+    </h2>
+    <p class="mx-auto mt-3 max-w-xl text-ink-soft">
+      Death Cafe nació en Europa hace más de una década y hoy se vive en
+      decenas de países. Conoce su historia y cómo llegó a México.
+    </p>
+    <div class="mt-6">
+      <CTAButton href="/origen/">Ver la historia del movimiento</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

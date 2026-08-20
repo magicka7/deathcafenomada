@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CuentoCard from "../../components/CuentoCard.astro";
+
+const allCuentos = await getCollection("cuentos", ({ data }) => !data.draft);
+const cuentos = allCuentos.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Cuentos"
+  description="Relatos cortos y testimonios sobre la muerte, el duelo y los encuentros de Death Cafe Nómada."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">Cuentos</h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Relatos cortos y testimonios sobre la muerte, el duelo y lo que sucede
+      alrededor de nuestras mesas.
+    </p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {
+        cuentos.length > 0 ? (
+          cuentos.map((cuento) => <CuentoCard cuento={cuento} />)
+        ) : (
+          <p class="text-ink-soft">Todavía no hay cuentos publicados.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

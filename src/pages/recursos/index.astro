@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../components/ResourceSectionNav.astro";
+---
+
+<BaseLayout
+  title="Recursos"
+  description="Recursos sobre voluntad anticipada, libros recomendados y enlaces útiles en México para hablar de la muerte, el duelo y el final de la vida."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Recursos
+    </h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Un Death Cafe no reemplaza el acompañamiento profesional. Aquí reunimos
+      información práctica y recomendaciones para quienes quieran seguir
+      explorando estos temas por su cuenta.
+    </p>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-3">
+      <a href="/recursos/voluntad-anticipada/" class="rounded-2xl border border-sand bg-paper p-6 hover:shadow-md">
+        <h2 class="font-serif-display text-lg font-semibold text-ink">Voluntad anticipada</h2>
+        <p class="mt-2 text-sm text-ink-soft">Qué es y cómo dejar tus decisiones médicas por escrito, en México y EE.UU.</p>
+      </a>
+      <a href="/recursos/libros/" class="rounded-2xl border border-sand bg-paper p-6 hover:shadow-md">
+        <h2 class="font-serif-display text-lg font-semibold text-ink">Libros recomendados</h2>
+        <p class="mt-2 text-sm text-ink-soft">Lecturas sobre muerte, duelo y mortalidad.</p>
+      </a>
+      <a href="/recursos/enlaces/" class="rounded-2xl border border-sand bg-paper p-6 hover:shadow-md">
+        <h2 class="font-serif-display text-lg font-semibold text-ink">Enlaces útiles</h2>
+        <p class="mt-2 text-sm text-ink-soft">Duelo, tanatología, cuidados paliativos y líneas de apoyo en México.</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

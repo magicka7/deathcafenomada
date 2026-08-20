@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  book: CollectionEntry<"books">;
+}
+
+const { book } = Astro.props;
+const { title, author, note, language, link } = book.data;
+---
+
+<div class="rounded-2xl border border-sand bg-paper p-5">
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="font-serif-display text-lg font-semibold text-ink">{title}</h3>
+    <span class="shrink-0 rounded-full bg-sand px-2 py-0.5 text-xs font-semibold uppercase text-ink-soft">
+      {language}
+    </span>
+  </div>
+  <p class="mt-1 text-sm text-ink-soft">{author}</p>
+  {note && <p class="mt-3 text-sm text-ink-soft">{note}</p>}
+  {link && (
+    <a href={link} class="mt-3 inline-block text-sm font-semibold text-terracotta hover:text-terracotta-dark" rel="noopener">
+      Más información →
+    </a>
+  )}
+</div>

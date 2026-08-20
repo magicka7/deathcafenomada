@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../components/ResourceSectionNav.astro";
+import LinkList from "../../components/LinkList.astro";
+
+const links = await getCollection("links");
+---
+
+<BaseLayout
+  title="Enlaces útiles"
+  description="Recursos de duelo, tanatología, cuidados paliativos y líneas de apoyo en México."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <a href="/recursos/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Todos los recursos
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Enlaces útiles en México
+    </h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Organizaciones y recursos de apoyo. Si atraviesas una crisis, busca
+      ayuda profesional de inmediato.
+    </p>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
+
+    <div class="mt-10">
+      <LinkList links={links} />
+    </div>
+  </section>
+</BaseLayout>

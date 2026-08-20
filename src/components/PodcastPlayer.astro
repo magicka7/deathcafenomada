@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  episode: CollectionEntry<"podcast">;
+}
+
+const { episode } = Astro.props;
+const { title, description, embedUrl, externalUrl } = episode.data;
+---
+
+<div class="rounded-2xl border border-sand bg-paper p-6">
+  <h3 class="font-serif-display text-lg font-semibold text-ink">{title}</h3>
+  {description && <p class="mt-2 text-sm text-ink-soft">{description}</p>}
+
+  {
+    embedUrl ? (
+      <div class="mt-4 overflow-hidden rounded-xl">
+        <iframe
+          src={embedUrl}
+          class="h-[152px] w-full"
+          loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          title={`Reproductor: ${title}`}
+        />
+      </div>
+    ) : externalUrl ? (
+      <a
+        href={externalUrl}
+        class="mt-4 inline-block text-sm font-semibold text-terracotta hover:text-terracotta-dark"
+        rel="noopener"
+      >
+        Escuchar episodio →
+      </a>
+    ) : null
+  }
+</div>

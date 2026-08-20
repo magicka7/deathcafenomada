@@ -1,0 +1,58 @@
+---
+const navLinks = [
+  { href: "/ciudades/", label: "Ciudades" },
+  { href: "/recursos/", label: "Recursos" },
+  { href: "/origen/", label: "Origen" },
+  { href: "/cuentos/", label: "Cuentos" },
+  { href: "/podcast/", label: "Podcast" },
+  { href: "/kubler-ross/", label: "Kübler-Ross" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-sand bg-cream/95 backdrop-blur">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
+    <a
+      href="/"
+      class="font-serif-display text-lg font-semibold text-ink transition-colors hover:text-terracotta sm:text-xl"
+    >
+      Death Cafe Nómada
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="peer hidden" />
+    <label
+      for="nav-toggle"
+      class="cursor-pointer rounded-md border border-sand p-2 text-ink md:hidden"
+      aria-label="Abrir menú"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </label>
+
+    <nav
+      class="hidden flex-col gap-1 md:flex md:flex-row md:items-center md:gap-6 peer-checked:absolute peer-checked:left-0 peer-checked:right-0 peer-checked:top-full peer-checked:flex peer-checked:flex-col peer-checked:border-b peer-checked:border-sand peer-checked:bg-cream peer-checked:px-4 peer-checked:py-3 peer-checked:shadow-sm"
+      aria-label="Navegación principal"
+    >
+      {
+        navLinks.map((link) => {
+          const isActive = currentPath.startsWith(link.href);
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                "rounded-md px-2 py-1.5 text-sm font-medium transition-colors",
+                isActive
+                  ? "text-terracotta-dark"
+                  : "text-ink-soft hover:text-terracotta",
+              ]}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </div>
+</header>

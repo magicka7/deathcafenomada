@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PodcastPlayer from "./PodcastPlayer.astro";
+
+interface Props {
+  episodes: CollectionEntry<"podcast">[];
+}
+
+const { episodes } = Astro.props;
+
+const sorted = [...episodes].sort((a, b) => {
+  const aTime = a.data.publishDate?.getTime() ?? 0;
+  const bTime = b.data.publishDate?.getTime() ?? 0;
+  return bTime - aTime;
+});
+---
+
+{
+  sorted.length === 0 ? (
+    <div class="rounded-2xl border border-dashed border-sand bg-paper p-10 text-center text-ink-soft">
+      <p class="font-serif-display text-lg text-ink">Próximamente</p>
+      <p class="mt-2 text-sm">
+        Estamos preparando el podcast de Death Cafe Nómada. Vuelve pronto para
+        escuchar los primeros episodios.
+      </p>
+    </div>
+  ) : (
+    <div class="space-y-5">
+      {sorted.map((episode) => (
+        <PodcastPlayer episode={episode} />
+      ))}
+    </div>
+  )
+}

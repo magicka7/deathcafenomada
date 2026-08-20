@@ -1,0 +1,23 @@
+---
+interface Props {
+  year: string;
+  title: string;
+  isLast?: boolean;
+}
+
+const { year, title, isLast = false } = Astro.props;
+---
+
+<li class="relative pl-10 pb-10">
+  {!isLast && (
+    <span class="absolute left-[7px] top-6 h-full w-px bg-sand" aria-hidden="true" />
+  )}
+  <span class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-2 border-terracotta bg-cream" aria-hidden="true" />
+  <p class="font-serif-display text-sm font-semibold uppercase tracking-wide text-terracotta-dark">
+    {year}
+  </p>
+  <h3 class="mt-1 font-serif-display text-lg font-semibold text-ink">{title}</h3>
+  <div class="mt-2 text-sm text-ink-soft">
+    <slot />
+  </div>
+</li>
