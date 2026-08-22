@@ -4,7 +4,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ResourceSectionNav from "../../components/ResourceSectionNav.astro";
 import BookList from "../../components/BookList.astro";
 
-const books = await getCollection("books");
+const books = (await getCollection("books")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 ---
 
 <BaseLayout

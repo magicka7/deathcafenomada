@@ -1,34 +1,66 @@
 [
   {
-    "id": "grupo-apoyo-duelo-placeholder",
-    "title": "[EDITAR] Grupo de acompañamiento en duelo",
-    "url": "https://example.org/duelo",
+    "id": "ekr-mexico",
+    "title": "EKR México — Fundación Elisabeth Kübler-Ross México",
+    "url": "https://ekrmexico.org/",
     "category": "duelo",
-    "description": "Espacio de acompañamiento para procesos de duelo. Reemplazar por una organización real y verificada antes de publicar.",
-    "placeholder": true
+    "description": "Acompañamiento compasivo en duelo y en el final de la vida para personas y familias en México, con formación de voluntarios a través de su programa ESFIM.",
+    "placeholder": false
   },
   {
-    "id": "asociacion-tanatologia-placeholder",
-    "title": "[EDITAR] Asociación Mexicana de Tanatología",
-    "url": "https://example.org/tanatologia",
-    "category": "tanatologia",
-    "description": "Formación y acompañamiento tanatológico en México. Confirmar nombre, vigencia y enlace oficial antes de publicar.",
-    "placeholder": true
+    "id": "ekr-foundation",
+    "title": "The Elisabeth Kübler-Ross Foundation",
+    "url": "https://www.ekrfoundation.org/es/",
+    "category": "duelo",
+    "description": "Fundación internacional dedicada a la educación y el acompañamiento en torno a la muerte, el morir y el duelo, con capítulos y programas de formación en distintos países.",
+    "placeholder": false
   },
   {
-    "id": "cuidados-paliativos-placeholder",
-    "title": "[EDITAR] Directorio de cuidados paliativos",
-    "url": "https://example.org/cuidados-paliativos",
+    "id": "cecpam",
+    "title": "CECPAM — Centro de Cuidados Paliativos de México",
+    "url": "https://cecpam.org/",
     "category": "cuidados-paliativos",
-    "description": "Directorio o institución de referencia en cuidados paliativos en México. Reemplazar por fuente verificada (ej. instituciones públicas de salud).",
-    "placeholder": true
+    "description": "Institución de asistencia privada sin fines de lucro que brinda cuidados paliativos a domicilio a niños, adultos y personas mayores dependientes con enfermedades crónicas e incurables.",
+    "placeholder": false
   },
   {
-    "id": "linea-apoyo-emocional-placeholder",
-    "title": "[EDITAR] Línea de apoyo emocional 24/7",
-    "url": "https://example.org/linea-apoyo",
+    "id": "linea-de-la-vida",
+    "title": "Línea de la Vida — 800-911-2000",
+    "url": "tel:8009112000",
     "category": "linea-de-apoyo",
-    "description": "Línea telefónica de apoyo emocional y prevención del suicidio. IMPORTANTE: verificar número y vigencia con la fuente oficial antes de publicar — no usar sin confirmar.",
-    "placeholder": true
+    "description": "Atención nacional, gratuita y 24/7 para salud mental y adicciones.",
+    "placeholder": false
+  },
+  {
+    "id": "saptel",
+    "title": "SAPTEL (Sistema de Apoyo Psicológico Telefónico) — 55-5259-8121",
+    "url": "tel:5552598121",
+    "category": "linea-de-apoyo",
+    "description": "Atención de crisis emocionales las 24 horas.",
+    "placeholder": false
+  },
+  {
+    "id": "linea-atencion-psicologica-unam",
+    "title": "Línea de Atención Psicológica UNAM — 55-5025-0855",
+    "url": "tel:5550250855",
+    "category": "linea-de-apoyo",
+    "description": "Apoyo psicológico a distancia.",
+    "placeholder": false
+  },
+  {
+    "id": "consejo-ciudadano",
+    "title": "Consejo Ciudadano (CDMX / Nacional) — 55-5533-5533",
+    "url": "tel:5555335533",
+    "category": "linea-de-apoyo",
+    "description": "Línea de seguridad y chat de confianza.",
+    "placeholder": false
+  },
+  {
+    "id": "emergencias-nacionales",
+    "title": "Emergencias Nacionales — 911",
+    "url": "tel:911",
+    "category": "linea-de-apoyo",
+    "description": "Para situaciones de riesgo inmediato o peligro inminente.",
+    "placeholder": false
   }
 ]

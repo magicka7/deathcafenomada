@@ -3,6 +3,8 @@ const items = [
   { href: "/recursos/voluntad-anticipada/", label: "Voluntad anticipada" },
   { href: "/recursos/libros/", label: "Libros recomendados" },
   { href: "/recursos/enlaces/", label: "Enlaces útiles" },
+  { href: "/recursos/cuentos/", label: "Cuentos" },
+  { href: "/recursos/podcast/", label: "Podcast" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -11,7 +13,7 @@ const currentPath = Astro.url.pathname;
 <nav class="flex flex-wrap gap-2" aria-label="Subsecciones de Recursos">
   {
     items.map((item) => {
-      const isActive = currentPath === item.href;
+      const isActive = currentPath.startsWith(item.href);
       return (
         <a
           href={item.href}

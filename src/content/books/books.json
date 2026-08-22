@@ -1,18 +1,20 @@
 [
   {
+    "id": "kubler-ross-la-muerte-un-amanecer",
+    "title": "La muerte: un amanecer",
+    "author": "Elizabeth Kübler-Ross",
+    "note": "Un libro breve y luminoso sobre la muerte entendida como tránsito y no como final. La puerta de entrada más accesible a su obra.",
+    "language": "es",
+    "order": 1,
+    "placeholder": true
+  },
+  {
     "id": "kubler-ross-sobre-la-muerte-y-los-moribundos",
     "title": "Sobre la muerte y los moribundos",
     "author": "Elizabeth Kübler-Ross",
     "note": "El libro fundacional sobre las etapas del duelo, basado en entrevistas reales con personas en fase terminal. Punto de partida obligado.",
     "language": "es",
-    "placeholder": true
-  },
-  {
-    "id": "yalom-mirar-al-sol",
-    "title": "Mirar al sol: cómo superar el terror a la muerte",
-    "author": "Irvin D. Yalom",
-    "note": "Un psiquiatra existencialista explora el miedo a morir desde la clínica y la filosofía, con un tono cercano y esperanzador.",
-    "language": "es",
+    "order": 2,
     "placeholder": true
   },
   {
@@ -21,6 +23,7 @@
     "author": "Atul Gawande",
     "note": "Un cirujano cuestiona cómo la medicina moderna maneja el envejecimiento y el final de la vida, y qué significa morir bien.",
     "language": "es",
+    "order": 3,
     "placeholder": true
   },
   {
@@ -29,6 +32,7 @@
     "author": "Joan Didion",
     "note": "Un testimonio íntimo y lúcido sobre el duelo repentino, escrito tras la muerte de su esposo.",
     "language": "es",
+    "order": 4,
     "placeholder": true
   },
   {
@@ -37,14 +41,7 @@
     "author": "Caitlin Doughty",
     "note": "Una embalsamadora cuenta, con humor y sin tapujos, lo que la industria funeraria normalmente esconde.",
     "language": "es",
-    "placeholder": true
-  },
-  {
-    "id": "kalanithi-lo-que-el-viento-no-se-lleva",
-    "title": "Lo que el viento no se lleva (When Breath Becomes Air)",
-    "author": "Paul Kalanithi",
-    "note": "Un neurocirujano de 36 años, diagnosticado con cáncer terminal, reflexiona sobre qué hace que la vida valga la pena.",
-    "language": "es",
+    "order": 5,
     "placeholder": true
   },
   {
@@ -53,6 +50,7 @@
     "author": "Stephen Levine",
     "note": "Una guía contemplativa, cercana al budismo, para acompañar el proceso de morir con presencia.",
     "language": "en",
+    "order": 6,
     "placeholder": true
   }
 ]

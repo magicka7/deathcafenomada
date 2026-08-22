@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  event: CollectionEntry<"events">;
+}
+
+const { event } = Astro.props;
+const { date, time, venueName, venueAddress } = event.data;
+
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+const weekday = capitalize(
+  date.toLocaleDateString("es-MX", { weekday: "long", timeZone: "UTC" })
+);
+const day = date.toLocaleDateString("es-MX", { day: "numeric", timeZone: "UTC" });
+const month = date.toLocaleDateString("es-MX", { month: "long", timeZone: "UTC" });
+---
+
+<div class="relative border border-ink bg-paper shadow-[0_1px_2px_rgba(36,33,29,0.06),0_10px_24px_-8px_rgba(36,33,29,0.22)]">
+  <span
+    class="absolute left-1/2 top-[18px] h-3.5 w-3.5 -translate-x-1/2 rounded-full border border-ink-soft bg-cream"
+    aria-hidden="true"
+  ></span>
+
+  <div class="px-8 pb-16 pt-11">
+    <span class="inline-block border border-olive px-2.5 py-1 font-mono text-sm font-bold tracking-[0.08em] text-olive">
+      próximo encuentro
+    </span>
+
+    <p class="font-serif-display mt-[18px] text-[28px] leading-[1.25] text-ink sm:text-[30px]">
+      {weekday} {day}<br />
+      de {month}, {time}
+    </p>
+
+    <hr class="my-[18px] border-t border-dashed border-sand" />
+
+    <p class="mb-1 text-[14.5px] leading-[1.6] text-ink-soft">
+      <strong class="font-semibold text-ink">{venueName}</strong>
+    </p>
+    <p class="mb-1 text-[14.5px] leading-[1.6] text-ink-soft">{venueAddress}</p>
+  </div>
+
+  <span
+    class="absolute bottom-5 right-6 rotate-[-4deg] border border-terracotta px-2 py-1 font-mono text-[10px] tracking-[0.06em] text-terracotta opacity-[0.85]"
+  >
+    confirmado
+  </span>
+</div>

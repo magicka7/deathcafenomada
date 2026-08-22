@@ -3,8 +3,8 @@
   "state": "Puebla",
   "status": "activa",
   "shortDescription": "Nuestra ciudad ancla. Cholula nos recibió con sus jardines, sus campanas y su calma de pueblo — el primer lugar donde Death Cafe Nómada puso una mesa, sirvió té y abrió la conversación.",
-  "howToArrive": "El encuentro es en el centro de Cholula, a unos minutos caminando del Zócalo. Si vienes de Puebla capital, puedes tomar una combi con ruta a Cholula desde la 11 Norte, o un Uber/taxi (~20-25 min desde el centro de Puebla). Hay estacionamiento en calles aledañas. [EDITAR: confirmar indicaciones exactas una vez fijado el lugar definitivo.]",
-  "mapEmbedUrl": "https://www.google.com/maps?q=Centro+de+San+Pedro+Cholula,+Puebla,+Mexico&output=embed",
+  "howToArrive": "Nos reunimos en Los libros de Sophie (C. 4 Pte. 311-A, San Miguel, Colonia Centro, 72810 San Andrés Cholula, Pue.), a unos minutos caminando del Zócalo. Si vienes de Puebla capital, puedes tomar una combi con ruta a Cholula desde la 11 Norte, o un Uber/taxi (~20-25 min desde el centro de Puebla). Hay estacionamiento en calles aledañas.",
+  "mapEmbedUrl": "https://www.google.com/maps?q=Los+libros+de+Sophie,+San+Andr%C3%A9s+Cholula,+Puebla&output=embed",
   "heroImage": "/images/cities/cholula-placeholder.jpg",
   "isPrimary": true
 }

@@ -1,0 +1,15 @@
+---
+const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
+const href = `https://translate.google.com/translate?sl=es&tl=en&u=${encodeURIComponent(currentUrl)}`;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Translate to English"
+  title="Translate to English"
+  class="fixed bottom-24 right-5 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-cream font-mono text-[13px] font-semibold text-ink shadow-[0_6px_24px_rgba(36,33,29,0.28)] transition-colors hover:bg-olive hover:text-cream min-[821px]:bottom-28 min-[821px]:right-8"
+>
+  EN
+</a>

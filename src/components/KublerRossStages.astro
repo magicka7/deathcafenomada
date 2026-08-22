@@ -28,10 +28,10 @@ const stages = [
 ];
 ---
 
-<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+<div class="mt-8 -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0">
   {
     stages.map((stage, i) => (
-      <div class="rounded-2xl border border-sand bg-paper p-5">
+      <div class="w-64 shrink-0 snap-start rounded-2xl border border-sand bg-paper p-5">
         <span class="font-serif-display text-2xl font-semibold text-honey">
           {String(i + 1).padStart(2, "0")}
         </span>

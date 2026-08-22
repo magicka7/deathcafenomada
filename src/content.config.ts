@@ -37,6 +37,7 @@ const books = defineCollection({
     note: z.string().optional(),
     language: z.enum(["es", "en"]),
     link: z.string().url().optional(),
+    order: z.number().default(99),
     placeholder: z.boolean().default(false),
   }),
 });
@@ -79,6 +80,7 @@ const cuentos = defineCollection({
     date: z.coerce.date(),
     excerpt: z.string(),
     citySlug: z.string().optional(),
+    youtubeUrl: z.string().url().optional(),
     draft: z.boolean().default(false),
   }),
 });

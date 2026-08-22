@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from "astro:content";
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+export async function getStaticPaths() {
+  const cuentos = await getCollection("cuentos");
+  return cuentos.map((cuento) => ({
+    params: { slug: cuento.id },
+    props: { cuento },
+  }));
+}
+
+const { cuento } = Astro.props;
+const { title, author, date, excerpt, youtubeUrl } = cuento.data;
+const { Content } = await render(cuento);
+
+function toYoutubeEmbed(url: string) {
+  const id = new URL(url).searchParams.get("v");
+  return id ? `https://www.youtube.com/embed/${id}` : url.replace("watch?v=", "embed/");
+}
+---
+
+<ArticleLayout title={title} description={excerpt} author={author} date={date}>
+  {youtubeUrl && (
+    <div class="mb-8 aspect-video overflow-hidden rounded-2xl border border-sand">
+      <iframe
+        class="h-full w-full"
+        src={toYoutubeEmbed(youtubeUrl)}
+        title={title}
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      />
+    </div>
+  )}
+  <Content />
+</ArticleLayout>

@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-@import "@fontsource/fraunces/400.css";
-@import "@fontsource/fraunces/500.css";
-@import "@fontsource/fraunces/600.css";
-@import "@fontsource/fraunces/400-italic.css";
-@import "@fontsource/work-sans/400.css";
-@import "@fontsource/work-sans/500.css";
-@import "@fontsource/work-sans/600.css";
+/* Display — headings, catalog/index-card numerals */
+@import "@fontsource/libre-caslon-text/400.css";
+@import "@fontsource/libre-caslon-text/400-italic.css";
+@import "@fontsource/libre-caslon-text/700.css";
 
+/* Body copy */
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/400-italic.css";
+@import "@fontsource/source-serif-4/500.css";
+@import "@fontsource/source-serif-4/600.css";
+
+/* Labels / utility text (nav, eyebrows, buttons, card metadata) */
+@import "@fontsource/space-mono/400.css";
+@import "@fontsource/space-mono/700.css";
+
+/*
+  Design tokens sourced from death-cafe-nomada-mockup.html (:root).
+  Existing token names are kept so every component that already
+  consumes them (Header, Footer, cards, etc.) inherits the new
+  palette automatically. Mapping from the mockup's own variable
+  names:
+    --paper      -> --color-cream        (page background)
+    --paper-2    -> --color-paper        (card / secondary surface)
+    --rule       -> --color-sand         (borders, dividers)
+    --oxblood    -> --color-terracotta   (primary accent)
+    (darkened)   -> --color-terracotta-dark (hover/active state)
+    --green      -> --color-olive        (secondary accent)
+    --brass      -> --color-honey        (highlight / labels)
+    --ink        -> --color-ink
+    --ink-soft   -> --color-ink-soft
+*/
 @theme {
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Caslon Text", ui-serif, Georgia, serif;
+  --font-sans: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
 
-  --color-cream: #fbf4ea;
-  --color-paper: #f3e7d6;
-  --color-sand: #e4d2b8;
-  --color-terracotta: #c1663d;
-  --color-terracotta-dark: #9c4e2c;
-  --color-olive: #7a8450;
-  --color-ink: #3a2e27;
-  --color-ink-soft: #6b5a4e;
-  --color-honey: #e8a945;
+  --color-cream: #ede7d8;
+  --color-paper: #e5ddc9;
+  --color-sand: #c7bfae;
+  --color-terracotta: #7a3129;
+  --color-terracotta-dark: #5f2620;
+  --color-olive: #3f5d50;
+  --color-ink: #24211d;
+  --color-ink-soft: #514b41;
+  --color-honey: #7a5c28;
 }
 
 html {
@@ -44,6 +68,24 @@ body {
 .prose-cuento p {
   margin-top: 1.25em;
   line-height: 1.8;
+}
+
+/*
+  Card surfaces (bg-paper) sit only ~3% darker than the page background
+  (bg-cream), too close to read as a distinct surface on their own.
+  A visible shadow makes the card lift off the page independent of
+  the color contrast. Scoped to the rounded bg-paper "ficha" pattern
+  so it doesn't apply to bg-paper used as a full-width section (Footer).
+  Placed in the utilities layer so cards with hover:shadow-md still
+  intensify on hover instead of being overridden by this base shadow.
+*/
+@layer utilities {
+  .rounded-2xl.bg-paper,
+  .rounded-xl.bg-paper {
+    box-shadow:
+      0 1px 2px rgba(36, 33, 29, 0.06),
+      0 8px 20px -6px rgba(36, 33, 29, 0.18);
+  }
 }
 
 .skip-link {

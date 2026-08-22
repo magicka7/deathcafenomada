@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { cuento } = Astro.props;
-const { title, author, date, excerpt } = cuento.data;
+const { title, author, date, excerpt, youtubeUrl } = cuento.data;
 
 const formattedDate = date.toLocaleDateString("es-MX", {
   year: "numeric",
@@ -17,10 +17,18 @@ const formattedDate = date.toLocaleDateString("es-MX", {
 ---
 
 <a
-  href={`/cuentos/${cuento.id}/`}
+  href={`/recursos/cuentos/${cuento.id}/`}
   class="group block rounded-2xl border border-sand bg-paper p-6 transition-shadow hover:shadow-md"
 >
-  <p class="text-xs text-ink-soft">
+  {youtubeUrl && (
+    <span class="inline-flex items-center gap-1.5 rounded-full border border-terracotta/30 bg-terracotta/10 px-3 py-1 text-xs font-semibold text-terracotta-dark">
+      <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      Video
+    </span>
+  )}
+  <p class:list={["text-xs text-ink-soft", youtubeUrl && "mt-2"]}>
     {author && <span>{author} · </span>}
     <time datetime={date.toISOString()}>{formattedDate}</time>
   </p>

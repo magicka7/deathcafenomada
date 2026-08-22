@@ -1,23 +1,49 @@
 ---
-import CTAButton from "./CTAButton.astro";
+import { getCollection } from "astro:content";
+import EventIndexCard from "./EventIndexCard.astro";
+
+const events = await getCollection("events");
+const cities = await getCollection("cities");
+
+const featured =
+  events.find((e) => e.data.isFeatured) ??
+  events
+    .filter((e) => e.data.date.getTime() >= Date.now())
+    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())[0];
+
+const city = featured ? cities.find((c) => c.id === featured.data.citySlug) : undefined;
+
+const cityLabel = city ? `${city.data.name.toLowerCase()}, ${city.data.state.toLowerCase()}` : null;
 ---
 
-<section class="border-b border-sand bg-paper">
-  <div class="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28">
-    <p class="font-serif-display text-sm uppercase tracking-[0.2em] text-terracotta-dark">
-      Un espacio para conversar
-    </p>
-    <h1 class="mt-4 font-serif-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-      Death Cafe Nómada
-    </h1>
-    <p class="mx-auto mt-6 max-w-xl text-lg text-ink-soft">
-      Un Death Cafe es una charla abierta y gratuita sobre la muerte, con té y
-      pastel, sin agenda terapéutica ni religiosa — solo un grupo de personas
-      escuchándose.
-    </p>
-    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-      <CTAButton href="#proximo-encuentro">Ver el próximo encuentro</CTAButton>
-      <CTAButton href="/ciudades/" variant="outline">Conoce las ciudades</CTAButton>
+<section id="proximo-encuentro" class="border-b border-sand bg-cream">
+  <div
+    class="mx-auto grid max-w-[1180px] items-start gap-16 px-6 pb-16 pt-12 min-[821px]:grid-cols-[1.1fr_0.9fr] min-[821px]:px-10 min-[821px]:pb-24 min-[821px]:pt-[72px]"
+  >
+    <div>
+      {
+        cityLabel && (
+          <p class="mb-[22px] flex items-center gap-2.5 font-mono text-xs tracking-[0.06em] text-honey">
+            <span class="h-px w-[22px] bg-honey" aria-hidden="true" />
+            archivo n.º 1 — {cityLabel}
+          </p>
+        )
+      }
+
+      <h1 class="font-serif-display max-w-[11.5ch] text-[38px] font-normal leading-[1.12] text-ink min-[821px]:text-[56px]">
+        Hablar de la muerte <em class="text-terracotta">no mata.</em>
+      </h1>
+
+      <p class="mt-7 max-w-[44ch] text-lg leading-relaxed text-ink-soft">
+        Café o té y una charla para compartir. Sin guión terapéutico, sin
+        agenda religiosa — solo un grupo de personas escuchándose.
+      </p>
+
+      <span class="mt-9 block font-mono text-[11.5px] text-ink-soft opacity-75">
+        cupo de 15 · entrada libre · no se requiere experiencia previa
+      </span>
     </div>
+
+    {featured && <EventIndexCard event={featured} />}
   </div>
 </section>

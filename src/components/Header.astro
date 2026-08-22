@@ -3,8 +3,6 @@ const navLinks = [
   { href: "/ciudades/", label: "Ciudades" },
   { href: "/recursos/", label: "Recursos" },
   { href: "/origen/", label: "Origen" },
-  { href: "/cuentos/", label: "Cuentos" },
-  { href: "/podcast/", label: "Podcast" },
   { href: "/kubler-ross/", label: "Kübler-Ross" },
 ];
 
@@ -15,9 +13,9 @@ const currentPath = Astro.url.pathname;
   <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
     <a
       href="/"
-      class="font-serif-display text-lg font-semibold text-ink transition-colors hover:text-terracotta sm:text-xl"
+      class="font-serif-display text-lg font-semibold text-ink transition-colors hover:text-terracotta-dark sm:text-xl"
     >
-      Death Cafe Nómada
+      Death Cafe <span class="text-terracotta">Nómada</span>
     </a>
 
     <input type="checkbox" id="nav-toggle" class="peer hidden" />
@@ -42,10 +40,8 @@ const currentPath = Astro.url.pathname;
             <a
               href={link.href}
               class:list={[
-                "rounded-md px-2 py-1.5 text-sm font-medium transition-colors",
-                isActive
-                  ? "text-terracotta-dark"
-                  : "text-ink-soft hover:text-terracotta",
+                "rounded-md px-2 py-1.5 text-sm font-medium text-terracotta transition-colors hover:text-terracotta-dark",
+                isActive && "font-semibold underline decoration-terracotta/50 underline-offset-4",
               ]}
             >
               {link.label}
