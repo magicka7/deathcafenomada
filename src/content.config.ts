@@ -85,4 +85,14 @@ const cuentos = defineCollection({
   }),
 });
 
-export const collections = { cities, events, books, links, podcast, cuentos };
+const articles = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/articles" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    excerpt: z.string(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { cities, events, books, links, podcast, cuentos, articles };

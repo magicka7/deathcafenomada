@@ -8,6 +8,8 @@ interface Props {
 const { event } = Astro.props;
 const { date, time, venueName, venueAddress } = event.data;
 
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${venueName}, ${venueAddress}`)}`;
+
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 const weekday = capitalize(
@@ -36,7 +38,14 @@ const month = date.toLocaleDateString("es-MX", { month: "long", timeZone: "UTC" 
     <hr class="my-[18px] border-t border-dashed border-sand" />
 
     <p class="mb-1 text-[14.5px] leading-[1.6] text-ink-soft">
-      <strong class="font-semibold text-ink">{venueName}</strong>
+      <a
+        href={mapUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold text-ink underline decoration-sand underline-offset-2 hover:text-terracotta"
+      >
+        {venueName}
+      </a>
     </p>
     <p class="mb-1 text-[14.5px] leading-[1.6] text-ink-soft">{venueAddress}</p>
   </div>

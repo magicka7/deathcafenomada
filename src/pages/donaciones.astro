@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const phone = "525649808654";
+const message = "Hola, quisiera hacer una donación para apoyar a Death Cafe Nómada.";
+const whatsappHref = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+---
+
+<BaseLayout
+  title="Donaciones"
+  description="Los encuentros de Death Cafe Nómada son gratuitos. Si quieres apoyar a la organizadora, puedes hacer una donación voluntaria."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <a href="/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Volver al inicio
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Donaciones
+    </h1>
+
+    <div class="mt-8 space-y-6 text-ink-soft">
+      <p>
+        Los encuentros de <strong class="text-ink">Death Cafe Nómada</strong> son
+        y seguirán siendo <strong class="text-ink">gratuitos</strong>. Nadie
+        necesita pagar para sentarse a la mesa.
+      </p>
+      <p>
+        Si de todas formas quieres apoyar a la organizadora, eres bienvenido
+        a hacer una donación voluntaria. Por el momento, escríbele directo por
+        WhatsApp:
+      </p>
+
+      <div class="rounded-2xl border border-sand bg-paper p-6 text-center">
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block rounded-full bg-terracotta px-6 py-3 font-semibold text-cream transition-colors hover:bg-terracotta-dark"
+        >
+          Donar por WhatsApp →
+        </a>
+      </div>
+
+      <p class="text-sm italic">
+        Esta sección se actualizará pronto con más formas de donar (transferencia,
+        otros medios). Por ahora, WhatsApp es la vía más directa.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

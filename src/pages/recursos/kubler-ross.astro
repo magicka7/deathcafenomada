@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import KublerRossStages from "../components/KublerRossStages.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../components/ResourceSectionNav.astro";
+import KublerRossStages from "../../components/KublerRossStages.astro";
 ---
 
 <BaseLayout
@@ -8,7 +9,11 @@ import KublerRossStages from "../components/KublerRossStages.astro";
   description="El legado de Elizabeth Kübler-Ross: las 5 etapas del duelo y su influencia en el movimiento de muerte consciente y en el espíritu del Death Cafe."
 >
   <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-    <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+    <a href="/recursos/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Todos los recursos
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
       Elizabeth Kübler-Ross
     </h1>
     <p class="mt-4 max-w-2xl text-ink-soft">
@@ -17,6 +22,10 @@ import KublerRossStages from "../components/KublerRossStages.astro";
       moribundos</em> (1969) cambió para siempre la forma en que hablamos —
       o dejamos de hablar— sobre el final de la vida.
     </p>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
 
     <div class="mt-10 space-y-6 text-ink-soft">
       <p>

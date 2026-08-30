@@ -57,13 +57,18 @@ const upcomingEvents = allEvents
       <p class="mt-3 text-ink-soft">{howToArrive}</p>
       {mapEmbedUrl && (
         <div class="mt-5 overflow-hidden rounded-2xl border border-sand">
-          <iframe
-            src={mapEmbedUrl}
-            class="h-72 w-full"
-            loading="lazy"
-            title={`Mapa de ${name}`}
-          />
+          <iframe src={mapEmbedUrl} class="h-72 w-full" title={`Mapa de ${name}`} />
         </div>
+      )}
+      {mapEmbedUrl && (
+        <a
+          href={mapEmbedUrl.replace(/[?&]output=embed/, "")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-3 inline-block text-sm font-medium text-terracotta hover:text-terracotta-dark"
+        >
+          Abrir en Google Maps ↗
+        </a>
       )}
     </div>
   </section>

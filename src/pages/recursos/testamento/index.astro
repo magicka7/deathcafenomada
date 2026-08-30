@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../../components/ResourceSectionNav.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
+
+const allArticles = await getCollection("articles", ({ data }) => !data.draft);
+const articles = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Testamento"
+  description="Qué es el testamento en México, cuánto cuesta hacerlo y por qué septiembre es un buen mes para aprovechar los descuentos de las notarías."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <a href="/recursos/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Todos los recursos
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">Testamento</h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Información práctica sobre el testamento en México: qué cuesta hacerlo,
+      qué le cuesta a tu familia no tenerlo, y por qué septiembre suele ser
+      el mejor mes para tramitarlo.
+    </p>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {
+        articles.length > 0 ? (
+          articles.map((article) => <ArticleCard article={article} />)
+        ) : (
+          <p class="text-ink-soft">Todavía no hay artículos publicados.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Timeline from "../components/Timeline.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+---
+
+<BaseLayout
+  title="Acerca de mí"
+  description="Soy Maga, mexicana nacida en Veracruz. Así llegué a la tanatología, a Death Cafe y a fundar Death Cafe Nómada."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Acerca de mí
+    </h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Soy Maga, mexicana nacida en Veracruz. La vida me ha llenado de
+      bendiciones y he tenido la oportunidad de vivir fuera de México — y
+      desde ahí, sin buscarlo, llegué hasta aquí.
+    </p>
+
+    <Timeline>
+      <TimelineItem year="2023" title="El fallecimiento de mi mamá">
+        <p>
+          Mi mamá falleció en 2023. Estando fuera de México, vivir mi duelo
+          desde la distancia fue especialmente complicado.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="2024" title="Busqué ayuda: mi tanatóloga Fabia Montes">
+        <p>
+          Busqué ayuda con mi tanatóloga, Fabia Montes, quien me acompañó en
+          mi proceso de duelo. Fue ella quien me abrió la puerta a todo esto:
+          el mundo de la tanatología, el trabajo de Elisabeth Kübler-Ross, y
+          los Death Cafe.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="2024" title="Mi primer Death Cafe, en Nueva Zelanda">
+        <p>
+          Tuve la oportunidad de ir a mi primer Death Cafe en Nueva Zelanda.
+          Salí tan nutrida y llena de vida que supe que quería seguir
+          asistiendo a más.
+        </p>
+      </TimelineItem>
+
+      <TimelineItem year="Hoy" title="Death Cafe Nómada" isLast>
+        <p>
+          Como en el área donde estoy no había ninguno, decidí empezar el
+          mío. Y aquí va.
+        </p>
+      </TimelineItem>
+    </Timeline>
+  </section>
+</BaseLayout>

@@ -3,7 +3,8 @@ const navLinks = [
   { href: "/ciudades/", label: "Ciudades" },
   { href: "/recursos/", label: "Recursos" },
   { href: "/origen/", label: "Origen" },
-  { href: "/kubler-ross/", label: "Kübler-Ross" },
+  { href: "/acerca-de-mi/", label: "Acerca de mí" },
+  { href: "/donaciones/", label: "Donaciones" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -13,7 +14,7 @@ const currentPath = Astro.url.pathname;
   <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
     <a
       href="/"
-      class="font-serif-display text-lg font-semibold text-ink transition-colors hover:text-terracotta-dark sm:text-xl"
+      class="font-serif-display text-2xl font-semibold text-ink transition-colors hover:text-terracotta-dark sm:text-3xl"
     >
       Death Cafe <span class="text-terracotta">Nómada</span>
     </a>
@@ -40,8 +41,8 @@ const currentPath = Astro.url.pathname;
             <a
               href={link.href}
               class:list={[
-                "rounded-md px-2 py-1.5 text-sm font-medium text-terracotta transition-colors hover:text-terracotta-dark",
-                isActive && "font-semibold underline decoration-terracotta/50 underline-offset-4",
+                "rounded-md px-3 py-1.5 text-lg font-medium text-olive transition-colors hover:text-terracotta-dark",
+                isActive && "font-semibold underline decoration-olive/50 underline-offset-4",
               ]}
             >
               {link.label}

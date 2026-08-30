@@ -24,7 +24,7 @@
     --paper      -> --color-cream        (page background)
     --paper-2    -> --color-paper        (card / secondary surface)
     --rule       -> --color-sand         (borders, dividers)
-    --oxblood    -> --color-terracotta   (primary accent)
+    --oxblood    -> --color-terracotta   (primary accent, ciruela #4A3B52)
     (darkened)   -> --color-terracotta-dark (hover/active state)
     --green      -> --color-olive        (secondary accent)
     --brass      -> --color-honey        (highlight / labels)
@@ -36,15 +36,15 @@
   --font-sans: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
 
-  --color-cream: #ede7d8;
-  --color-paper: #e5ddc9;
-  --color-sand: #c7bfae;
-  --color-terracotta: #7a3129;
-  --color-terracotta-dark: #5f2620;
-  --color-olive: #3f5d50;
-  --color-ink: #24211d;
-  --color-ink-soft: #514b41;
-  --color-honey: #7a5c28;
+  --color-cream: #f7f5f1;
+  --color-paper: #e4dad4;
+  --color-sand: #bba9a4;
+  --color-terracotta: #6b2737;
+  --color-terracotta-dark: #4a1b27;
+  --color-olive: #3f6b47;
+  --color-ink: #241f1f;
+  --color-ink-soft: #554a49;
+  --color-honey: #8a4e16;
 }
 
 html {
@@ -68,6 +68,29 @@ body {
 .prose-cuento p {
   margin-top: 1.25em;
   line-height: 1.8;
+}
+
+.prose-cuento table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  margin-top: 1.5em;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.prose-cuento th,
+.prose-cuento td {
+  border: 1px solid var(--color-sand);
+  padding: 0.6em 0.8em;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose-cuento th {
+  background: var(--color-paper);
+  font-family: var(--font-mono, monospace);
+  white-space: nowrap;
 }
 
 /*
