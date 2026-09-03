@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../../components/ResourceSectionNav.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
+
+const allArticles = await getCollection("ejemplos", ({ data }) => !data.draft);
+const articles = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Ejemplos"
+  description="Plantillas de referencia: un modelo de voluntad anticipada y un modelo de testamento digital que puedes adaptar."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <a href="/recursos/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Todos los recursos
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">Ejemplos</h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Plantillas de referencia para empezar a poner tus decisiones por
+      escrito: un modelo de voluntad anticipada y un modelo de testamento
+      digital. No son documentos oficiales — úsalos como punto de partida y
+      verifica los requisitos de tu estado o país antes de firmar algo definitivo.
+    </p>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {
+        articles.length > 0 ? (
+          articles.map((article) => (
+            <ArticleCard article={article} basePath="/recursos/ejemplos/" linkLabel="Ver plantilla →" />
+          ))
+        ) : (
+          <p class="text-ink-soft">Todavía no hay ejemplos publicados.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

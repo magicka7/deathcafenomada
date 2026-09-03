@@ -95,4 +95,34 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { cities, events, books, links, podcast, cuentos, articles };
+const legadoDigital = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/legado-digital" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    excerpt: z.string(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+const ejemplos = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/ejemplos" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    excerpt: z.string(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+const entierroEcologico = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/entierro-ecologico" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    excerpt: z.string(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { cities, events, books, links, podcast, cuentos, articles, legadoDigital, ejemplos, entierroEcologico };

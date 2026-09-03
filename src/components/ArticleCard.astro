@@ -2,10 +2,16 @@
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  article: CollectionEntry<"articles">;
+  article:
+    | CollectionEntry<"articles">
+    | CollectionEntry<"legadoDigital">
+    | CollectionEntry<"ejemplos">
+    | CollectionEntry<"entierroEcologico">;
+  basePath?: string;
+  linkLabel?: string;
 }
 
-const { article } = Astro.props;
+const { article, basePath = "/recursos/testamento/", linkLabel = "Leer más →" } = Astro.props;
 const { title, date, excerpt } = article.data;
 
 const formattedDate = date.toLocaleDateString("es-MX", {
@@ -17,7 +23,7 @@ const formattedDate = date.toLocaleDateString("es-MX", {
 ---
 
 <a
-  href={`/recursos/testamento/${article.id}/`}
+  href={`${basePath}${article.id}/`}
   class="group block rounded-2xl border border-sand bg-paper p-6 transition-shadow hover:shadow-md"
 >
   <p class="text-xs text-ink-soft">
@@ -26,6 +32,6 @@ const formattedDate = date.toLocaleDateString("es-MX", {
   <h3 class="mt-2 font-serif-display text-xl font-semibold text-ink">{title}</h3>
   <p class="mt-3 text-sm text-ink-soft">{excerpt}</p>
   <span class="mt-4 inline-block text-sm font-semibold text-terracotta group-hover:text-terracotta-dark">
-    Leer más →
+    {linkLabel}
   </span>
 </a>
