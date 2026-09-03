@@ -28,6 +28,29 @@ La siguiente tabla compara, de forma aproximada, tres escenarios para una casa o
 - El **ISAI** (Impuesto Sobre Adquisición de Inmuebles) y los derechos de registro público varían por municipio; en donaciones entre familiares directos suele haber exenciones parciales que conviene confirmar con la notaría.
 - La opción de "donación en vida" tiene otras implicaciones (pierdes la propiedad de inmediato, posibles efectos fiscales para quien dona) que conviene platicar con un notario antes de decidir.
 
+## <span id="costos-por-estado">Costos preferenciales por estado (2026)</span>
+
+A continuación, la lista de los costos preferenciales confirmados para este año en las diferentes entidades del país:
+
+- **Chiapas**: $1,000
+- **Morelos**: $1,300 (+ IVA)
+- **Baja California, Coahuila, Durango y Guerrero**: $1,500 (Guerrero + IVA)
+- **Puebla**: $1,800
+- **Aguascalientes, Colima y San Luis Potosí**: $2,000
+- **Jalisco**: $2,300
+- **Yucatán**: $2,450
+- **Michoacán**: $2,480
+- **Campeche, Nuevo León y Tabasco**: $2,500 (Tabasco + IVA)
+- **Baja California Sur**: $2,600
+- **Hidalgo**: $2,900
+- **Querétaro**: $3,000
+- **Ciudad de México (CDMX)**: $3,800 (existen tarifas desde $733 para adultos mayores con testamento básico)
+- **Nayarit**: $4,100
+
+En **Chihuahua, Estado de México, Guanajuato, Oaxaca, Quintana Roo, Sinaloa, Sonora, Tamaulipas, Tlaxcala, Veracruz y Zacatecas** las tarifas no están estandarizadas a nivel estatal: cada notaría participante fija su propio costo.
+
+Fuente: [testamentos.segob.gob.mx](https://testamentos.segob.gob.mx/)
+
 ## ¿Qué hacer con esta información?
 
 Si no tienes testamento, septiembre es el mes en el que más rinde tu dinero para hacerlo: agenda una cita con una notaría en tu ciudad y pregunta por la promoción vigente. Si ya tienes una propiedad y estás pensando en donarla en vida, vale la pena comparar el costo de la donación contra el de dejarla en el testamento, porque no siempre es la opción más barata.

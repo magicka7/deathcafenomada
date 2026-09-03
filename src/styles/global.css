@@ -62,12 +62,47 @@ body {
 }
 
 .prose-cuento {
-  max-width: 65ch;
+  max-width: 78ch;
 }
 
 .prose-cuento p {
   margin-top: 1.25em;
   line-height: 1.8;
+}
+
+.prose-cuento h2 {
+  margin-top: 2em;
+  font-family: var(--font-serif);
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.prose-cuento h3 {
+  margin-top: 1.5em;
+  font-family: var(--font-serif);
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.prose-cuento ul,
+.prose-cuento ol {
+  margin-top: 1.25em;
+  padding-left: 1.25em;
+}
+
+.prose-cuento ul {
+  list-style: disc;
+}
+
+.prose-cuento ol {
+  list-style: decimal;
+}
+
+.prose-cuento li {
+  margin-top: 0.4em;
+  line-height: 1.7;
 }
 
 .prose-cuento table {
