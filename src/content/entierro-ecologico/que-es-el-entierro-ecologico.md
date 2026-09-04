@@ -32,7 +32,7 @@ Es una regulación local, no nacional, pero marca una dirección: por primera ve
 
 ## ¿Es una opción real hoy?
 
-Depende de dónde vivas. En Estados Unidos y Canadá existen ya alrededor de 470 cementerios que ofrecen algún tipo de entierro natural, certificados por organizaciones como el Green Burial Council. En México, la oferta formal apenas está naciendo, pero ya existe: el 18 de mayo de 2022, la **Fundación Elisabeth Kübler-Ross México Centro**, con sede en San Miguel de Allende, Guanajuato, realizó lo que documentó como el primer entierro genuinamente ecológico del país, como resultado de una colaboración con el propio Green Burial Council para desarrollar un modelo replicable de sitios de entierro natural orientados a la conservación de tierra y la reforestación. Es la misma fundación detrás del legado de [Elisabeth Kübler-Ross](/recursos/kubler-ross/), la médica que formuló las cinco etapas del duelo.
+Depende de dónde vivas. En Estados Unidos y Canadá existen ya alrededor de 470 cementerios que ofrecen algún tipo de entierro natural, certificados por organizaciones como el Green Burial Council. En México, la oferta formal apenas está naciendo, pero ya existe: el 18 de mayo de 2022, la **Fundación Elisabeth Kübler-Ross México Centro**, con sede en San Miguel de Allende, Guanajuato, realizó lo que documentó como el primer entierro genuinamente ecológico del país, como resultado de una colaboración con el propio Green Burial Council para desarrollar un modelo replicable de sitios de entierro natural orientados a la conservación de tierra y la reforestación. Es la misma fundación detrás del legado de [Elisabeth Kübler-Ross](/origen/), la médica que formuló las cinco etapas del duelo.
 
 Fuera de Guanajuato, algunos panteones y comunidades ya practican variantes de entierro sin embalsamamiento por tradición o por costo, mucho antes de que existiera el término "ecológico". Vale la pena preguntar directamente al panteón o funeraria de tu localidad si ofrecen —o permiten— alguna de estas opciones: muchos las autorizan aunque no las promocionen activamente, porque nadie las pide.
 
@@ -44,5 +44,32 @@ Fuera de Guanajuato, algunos panteones y comunidades ya practican variantes de e
 - ¿Cómo se marca la tumba, si es que se marca?
 
 Si te interesa dejar esto resuelto de antemano, puedes anotarlo como parte de tus instrucciones en un [testamento](/recursos/testamento/) o incluirlo en el apartado de "otras instrucciones" de tu [voluntad anticipada](/recursos/ejemplos/voluntad-anticipada/), para que la decisión no recaiga por sorpresa en tu familia.
+
+## Para ver
+
+Dos videos de Wilka Roig, MTP, sobre el trabajo detrás del primer entierro ecológico auténtico de México y el panorama del entierro verde en Latinoamérica:
+
+<div class="not-prose grid gap-5 sm:grid-cols-2">
+  <div class="overflow-hidden rounded-2xl border border-sand">
+    <iframe
+      class="aspect-video w-full"
+      src="https://www.youtube.com/embed/VgQfKb7L9wU"
+      title="The first step to reclaim authentically green burials in Mexico"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="overflow-hidden rounded-2xl border border-sand">
+    <iframe
+      class="aspect-video w-full"
+      src="https://www.youtube.com/embed/9vsr-vwp3Gs"
+      title="Returning to the Earth · Regresando a la tierra: Green Burial in Latin America · Entierro Verde"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
 
 *Este artículo ofrece información general con fines de reflexión, no asesoría legal ni funeraria. La disponibilidad y regulación del entierro ecológico varían por país, estado y municipio; consulta directamente con el panteón o la autoridad sanitaria de tu localidad.*

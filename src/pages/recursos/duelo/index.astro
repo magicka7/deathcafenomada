@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../../components/ResourceSectionNav.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
+
+const allArticles = await getCollection("duelo", ({ data }) => !data.draft);
+const articles = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Duelo"
+  description="Guías prácticas para acompañar a alguien en duelo: qué decir, qué evitar, y cómo sostener a quien atraviesa una pérdida."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <a href="/recursos/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Todos los recursos
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">Duelo</h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Cómo acompañar a alguien que atraviesa una pérdida: qué decir, qué
+      evitar, y por qué la intención de ayudar no siempre es suficiente.
+    </p>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {
+        articles.length > 0 ? (
+          articles.map((article) => <ArticleCard article={article} basePath="/recursos/duelo/" />)
+        ) : (
+          <p class="text-ink-soft">Todavía no hay artículos publicados.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

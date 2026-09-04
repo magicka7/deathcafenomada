@@ -16,6 +16,14 @@
     "placeholder": false
   },
   {
+    "id": "ekr-mexico-formulario",
+    "title": "EKR México — Formulario de acompañamiento",
+    "url": "https://ekrmexico.org/formulario/",
+    "category": "duelo",
+    "description": "Solicita acompañamiento para personas al final de su vida y para familias que ya perdieron a alguien.",
+    "placeholder": false
+  },
+  {
     "id": "cecpam",
     "title": "CECPAM — Centro de Cuidados Paliativos de México",
     "url": "https://cecpam.org/",

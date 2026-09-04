@@ -18,6 +18,20 @@ import TimelineItem from "../components/TimelineItem.astro";
     </p>
 
     <Timeline>
+      <TimelineItem year="1969" title="Elizabeth Kübler-Ross publica Sobre la muerte y los moribundos">
+        <p>
+          La psiquiatra suizo-estadounidense Elizabeth Kübler-Ross (1926–2004)
+          publica el libro que cambiaría para siempre la forma en que
+          hablamos —o dejamos de hablar— sobre el final de la vida. A partir
+          de cientos de entrevistas con pacientes en fase terminal, propone
+          las <strong class="text-ink">5 etapas del duelo</strong> e insiste
+          en que las personas moribundas merecen ser escuchadas, no solo
+          tratadas. Esa convicción —hablar de la muerte no acelera el daño,
+          sino que devuelve dignidad y agencia a quien la enfrenta— es la
+          misma que, décadas después, animaría cada mesa de Death Cafe.
+        </p>
+      </TimelineItem>
+
       <TimelineItem year="Años 2000" title="Bernard Crettaz y el Café Mortel, Suiza">
         <p>
           El sociólogo suizo Bernard Crettaz organiza los primeros
@@ -45,20 +59,15 @@ import TimelineItem from "../components/TimelineItem.astro";
         </p>
       </TimelineItem>
 
-      <TimelineItem year="2017" title="Muere Jon Underwood">
+      <TimelineItem year="2014–2015" title="Llegada a Latinoamérica y México">
         <p>
-          Jon Underwood fallece inesperadamente en 2017, pero el modelo que
-          creó —deliberadamente descentralizado— sigue creciendo sin
-          necesitar una organización central que lo dirija.
-        </p>
-      </TimelineItem>
-
-      <TimelineItem year="2010" title="Llegada a Latinoamérica y México">
-        <p>
-          El movimiento llega a países de habla hispana, incluido México,
-          donde distintos grupos independientes empiezan a organizar sus
-          propios encuentros, adaptando el formato original a contextos y
-          comunidades locales.
+          El primer Death Cafe de Latinoamérica se realiza en septiembre de
+          2014 en Buenos Aires, Argentina, organizado por El Faro Asociación
+          bajo la dirección de Viviana Bilezker. Un año después, en 2015,
+          Luisa Fernanda Ruiz Montiel organiza el primer Death Cafe en la
+          Ciudad de México, dando inicio a una serie de encuentros
+          independientes que se multiplicarían en distintas ciudades del
+          país en los años siguientes.
         </p>
       </TimelineItem>
 
@@ -80,5 +89,16 @@ import TimelineItem from "../components/TimelineItem.astro";
         </p>
       </TimelineItem>
     </Timeline>
+
+    <div class="mt-10 rounded-2xl border border-sand bg-paper p-6">
+      <h2 class="font-serif-display text-lg font-semibold text-ink">Lecturas relacionadas</h2>
+      <p class="mt-3 text-sm text-ink-soft">
+        Puedes encontrar <em>Sobre la muerte y los moribundos</em> y otras
+        obras relacionadas en nuestra sección de{" "}
+        <a href="/recursos/libros/" class="font-semibold text-terracotta-dark hover:underline">
+          libros recomendados
+        </a>.
+      </p>
+    </div>
   </section>
 </BaseLayout>

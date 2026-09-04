@@ -28,21 +28,18 @@ const stages = [
 ];
 ---
 
-<div class="mt-8 -mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:px-0">
+<ul class="mt-8 divide-y divide-sand rounded-2xl border border-sand bg-paper">
   {
-    stages.map((stage, i) => (
-      <div class="w-64 shrink-0 snap-start rounded-2xl border border-sand bg-paper p-5">
-        <span class="font-serif-display text-2xl font-semibold text-honey">
-          {String(i + 1).padStart(2, "0")}
-        </span>
-        <h3 class="mt-2 font-serif-display text-lg font-semibold text-ink">
+    stages.map((stage) => (
+      <li class="p-4">
+        <h3 class="font-serif-display text-base font-semibold text-ink">
           {stage.name}
         </h3>
-        <p class="mt-2 text-sm text-ink-soft">{stage.description}</p>
-      </div>
+        <p class="mt-1 text-sm text-ink-soft">{stage.description}</p>
+      </li>
     ))
   }
-</div>
+</ul>
 
 <p class="mt-6 max-w-2xl text-sm text-ink-soft">
   Kübler-Ross propuso estas etapas a partir de entrevistas con pacientes en
