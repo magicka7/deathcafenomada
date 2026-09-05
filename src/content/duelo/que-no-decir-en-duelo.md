@@ -25,14 +25,14 @@ Esta guía está basada en [un episodio de podcast](https://open.spotify.com/epi
 
 ## Frases que quedan mejor (más neutras y sinceras)
 
-- "Quiero tratar de entenderte desde mi experiencia" — tú eres la persona que necesita llorar, hablar, sentir y ser escuchada.
-- "Aquí estoy."
-- "No sé qué decir, pero aquí estoy para ti."
-- "Cuenta con mi apoyo" (¡pero de verdad que sea apoyo!).
-- "Sé que lo que estás sintiendo es complicado de poner en palabras, pero en el momento que desees compartirlo, aquí estoy."
-- "Tómate tu tiempo."
-- "Tu dolor es real."
-- "No tienes que ser fuerte."
+- **"Quiero tratar de entenderte desde mi experiencia"** — tú eres la persona que necesita llorar, hablar, sentir y ser escuchada.
+- **"Aquí estoy."**
+- **"No sé qué decir, pero aquí estoy para ti."**
+- **"Cuenta con mi apoyo"** (¡pero de verdad que sea apoyo!).
+- **"Sé que lo que estás sintiendo es complicado de poner en palabras, pero en el momento que desees compartirlo, aquí estoy."**
+- **"Tómate tu tiempo."**
+- **"Tu dolor es real."**
+- **"No tienes que ser fuerte."**
 
 Ser honesto es lo mejor. Por ejemplo: *"No puedo ir al funeral porque aún no he superado el de mi papá y me trae mucha tristeza, pero te puedo depositar 500 pesos para los gastos funerarios."*
 

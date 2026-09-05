@@ -66,6 +66,17 @@ body {
   line-height: 1.8;
 }
 
+.prose-cuento a {
+  color: var(--color-terracotta);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-cuento a:hover {
+  color: var(--color-terracotta-dark);
+}
+
 .prose-cuento h2 {
   margin-top: 2em;
   font-family: var(--font-serif);
