@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ResourceSectionNav from "../../../components/ResourceSectionNav.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
+
+const allArticles = await getCollection("eutanasia", ({ data }) => !data.draft);
+const articles = allArticles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Eutanasia"
+  description="Qué es la eutanasia, su historia, en qué países es legal en 2026 y cuál es la situación actual en México."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <a href="/recursos/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+      ← Todos los recursos
+    </a>
+
+    <h1 class="mt-4 font-serif-display text-3xl font-semibold text-ink sm:text-4xl">Eutanasia</h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Qué es, de dónde viene el debate, en qué países es legal hoy y cuál es
+      la situación actual en México.
+    </p>
+
+    <div class="mt-8">
+      <ResourceSectionNav />
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {
+        articles.length > 0 ? (
+          articles.map((article) => <ArticleCard article={article} basePath="/recursos/eutanasia/" />)
+        ) : (
+          <p class="text-ink-soft">Todavía no hay artículos publicados.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

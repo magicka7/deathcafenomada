@@ -135,4 +135,14 @@ const duelo = defineCollection({
   }),
 });
 
-export const collections = { cities, events, books, links, podcast, cuentos, articles, legadoDigital, ejemplos, entierroEcologico, duelo };
+const eutanasia = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/eutanasia" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    excerpt: z.string(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { cities, events, books, links, podcast, cuentos, articles, legadoDigital, ejemplos, entierroEcologico, duelo, eutanasia };
