@@ -25,6 +25,8 @@ const events = defineCollection({
     venueAddress: z.string(),
     notes: z.string().optional(),
     isFeatured: z.boolean().default(false),
+    attendees: z.number().optional(),
+    recap: z.string().optional(),
   }),
 });
 
