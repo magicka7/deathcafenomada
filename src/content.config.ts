@@ -147,4 +147,17 @@ const eutanasia = defineCollection({
   }),
 });
 
-export const collections = { cities, events, books, links, podcast, cuentos, articles, legadoDigital, ejemplos, entierroEcologico, duelo, eutanasia };
+const directorio = defineCollection({
+  loader: file("src/content/directorio/directorio.json"),
+  schema: z.object({
+    id: z.string(),
+    name: z.string(),
+    city: z.string(),
+    state: z.string(),
+    url: z.string().url().optional(),
+    contact: z.string().optional(),
+    description: z.string().optional(),
+  }),
+});
+
+export const collections = { cities, events, books, links, podcast, cuentos, articles, legadoDigital, ejemplos, entierroEcologico, duelo, eutanasia, directorio };

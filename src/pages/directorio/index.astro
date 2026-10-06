@@ -1,0 +1,81 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const entries = await getCollection("directorio");
+
+const states = [...new Set(entries.map((e) => e.data.state))].sort((a, b) =>
+  a.localeCompare(b, "es")
+);
+
+const linkLabel = (url: string) => {
+  const match = url.match(/instagram\.com\/([^/?]+)/);
+  return match ? `@${match[1]}` : "Sitio / redes →";
+};
+---
+
+<BaseLayout
+  title="Directorio"
+  description="Otros Death Cafe independientes en México, organizados por distintas personas y colectivos."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+    <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
+      Directorio de Death Cafe en México
+    </h1>
+    <p class="mt-4 max-w-2xl text-ink-soft">
+      Death Cafe Nómada organiza sus propios encuentros, pero no es el único.
+      Aquí reunimos otros Death Cafe independientes en México, organizados
+      por distintas personas y colectivos, para que encuentres uno cerca de
+      ti aunque no sea el nuestro.
+    </p>
+
+    <div class="mt-10 space-y-10">
+      {
+        entries.length > 0 ? (
+          states.map((state) => (
+            <div>
+              <h2 class="font-serif-display text-lg font-semibold text-olive">
+                {state}
+              </h2>
+              <ul class="mt-3 space-y-3">
+                {entries
+                  .filter((e) => e.data.state === state)
+                  .map((entry) => (
+                    <li class="rounded-xl border border-sand bg-paper p-4">
+                      <p class="font-semibold text-ink">
+                        {entry.data.name}
+                        <span class="font-normal text-ink-soft"> · {entry.data.city}</span>
+                      </p>
+                      {entry.data.description && (
+                        <p class="mt-1 text-sm text-ink-soft">{entry.data.description}</p>
+                      )}
+                      <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                        {entry.data.url && (
+                          <a
+                            href={entry.data.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="font-medium text-terracotta hover:text-terracotta-dark"
+                          >
+                            {linkLabel(entry.data.url)}
+                          </a>
+                        )}
+                        {entry.data.contact && (
+                          <span class="text-ink-soft">{entry.data.contact}</span>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ))
+        ) : (
+          <p class="rounded-2xl border border-sand bg-cream p-6 text-ink-soft">
+            Estamos reuniendo el directorio. Si organizas un Death Cafe en
+            México y quieres aparecer aquí, escríbenos.
+          </p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
