@@ -27,6 +27,7 @@ const events = defineCollection({
     isFeatured: z.boolean().default(false),
     attendees: z.number().optional(),
     recap: z.string().optional(),
+    mapUrl: z.string().url().optional(),
   }),
 });
 

@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { city } = Astro.props;
-const { name, state, status, shortDescription, howToArrive, mapEmbedUrl } = city.data;
+const { name, state, status, shortDescription } = city.data;
 
 const allEvents = await getCollection("events");
 const cityEvents = allEvents
@@ -67,6 +67,16 @@ const formatDate = (date: Date) => {
                 </p>
                 <p class="mt-3 text-sm text-ink-soft">{event.data.venueName}</p>
                 <p class="text-sm text-ink-soft">{event.data.venueAddress}</p>
+                {event.data.mapUrl && (
+                  <a
+                    href={event.data.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-1 inline-block text-sm font-medium text-terracotta hover:text-terracotta-dark"
+                  >
+                    Ver en Google Maps ↗
+                  </a>
+                )}
                 {isPast && event.data.recap && (
                   <p class="mt-3 text-sm text-ink-soft italic">{event.data.recap}</p>
                 )}
@@ -80,26 +90,6 @@ const formatDate = (date: Date) => {
           <p class="text-ink-soft">Aún no hay una fecha confirmada para esta ciudad.</p>
         )
       }
-    </div>
-
-    <div class="mt-10">
-      <h2 class="font-serif-display text-xl font-semibold text-ink">Cómo llegar</h2>
-      <p class="mt-3 text-ink-soft">{howToArrive}</p>
-      {mapEmbedUrl && (
-        <div class="mt-5 overflow-hidden rounded-2xl border border-sand">
-          <iframe src={mapEmbedUrl} class="h-72 w-full" title={`Mapa de ${name}`} />
-        </div>
-      )}
-      {mapEmbedUrl && (
-        <a
-          href={mapEmbedUrl.replace(/[?&]output=embed/, "")}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-3 inline-block text-sm font-medium text-terracotta hover:text-terracotta-dark"
-        >
-          Abrir en Google Maps ↗
-        </a>
-      )}
     </div>
   </section>
 </BaseLayout>

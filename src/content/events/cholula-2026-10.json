@@ -5,5 +5,6 @@
   "venueName": "Los libros de Sophie",
   "venueAddress": "C. 4 Pte. 311-A, San Miguel, Colonia Centro, 72810 San Andrés Cholula, Pue.",
   "notes": "Cupo limitado a 15 personas. Entrada libre, no se requiere experiencia previa. Aportación voluntaria.",
-  "isFeatured": true
+  "isFeatured": true,
+  "mapUrl": "https://www.google.com/maps?q=Los+libros+de+Sophie,+San+Andr%C3%A9s+Cholula,+Puebla"
 }
