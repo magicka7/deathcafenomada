@@ -1,11 +1,27 @@
 [
   {
+    "id": "death-cafe-nomada-cholula",
+    "name": "Death Cafe Nómada",
+    "city": "Cholula",
+    "state": "Puebla",
+    "url": "https://www.instagram.com/deathcafe.nomada/",
+    "description": "Encuentros presenciales."
+  },
+  {
     "id": "death-cafe-guadalajara",
     "name": "Death Cafe Guadalajara",
     "city": "Guadalajara",
     "state": "Jalisco",
     "url": "https://www.instagram.com/deathcafe.mx/",
     "description": "Encuentros presenciales y en línea."
+  },
+  {
+    "id": "death-cafe-zapopan",
+    "name": "Death Cafe Zapopan",
+    "city": "Zapopan",
+    "state": "Jalisco",
+    "url": "https://www.instagram.com/deathdoulayura/",
+    "description": "Encuentros presenciales."
   },
   {
     "id": "death-cafe-monterrey",
@@ -21,7 +37,6 @@
     "city": "Ciudad de México",
     "state": "Ciudad de México",
     "url": "https://www.instagram.com/tatianapineda.psic/",
-    "description": "Encuentros presenciales. Organizado por Tatiana Pineda.",
-    "secondaryUrl": "https://www.instagram.com/nitao_oficial/"
+    "description": "Encuentros presenciales."
   }
 ]
