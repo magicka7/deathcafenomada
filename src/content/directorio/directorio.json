@@ -6,5 +6,22 @@
     "state": "Jalisco",
     "url": "https://www.instagram.com/deathcafe.mx/",
     "description": "Encuentros presenciales y en línea."
+  },
+  {
+    "id": "death-cafe-monterrey",
+    "name": "Death Cafe Monterrey",
+    "city": "Monterrey",
+    "state": "Nuevo León",
+    "url": "https://www.instagram.com/deathcafe.mty/",
+    "description": "Encuentros presenciales."
+  },
+  {
+    "id": "death-cafe-cdmx",
+    "name": "Death Cafe CDMX",
+    "city": "Ciudad de México",
+    "state": "Ciudad de México",
+    "url": "https://www.instagram.com/tatianapineda.psic/",
+    "description": "Encuentros presenciales. Organizado por Tatiana Pineda.",
+    "secondaryUrl": "https://www.instagram.com/nitao_oficial/"
   }
 ]

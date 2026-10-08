@@ -156,6 +156,7 @@ const directorio = defineCollection({
     city: z.string(),
     state: z.string(),
     url: z.string().url().optional(),
+    secondaryUrl: z.string().url().optional(),
     contact: z.string().optional(),
     description: z.string().optional(),
   }),

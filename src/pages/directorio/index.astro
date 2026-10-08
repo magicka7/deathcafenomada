@@ -60,6 +60,16 @@ const linkLabel = (url: string) => {
                             {linkLabel(entry.data.url)}
                           </a>
                         )}
+                        {entry.data.secondaryUrl && (
+                          <a
+                            href={entry.data.secondaryUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="font-medium text-terracotta hover:text-terracotta-dark"
+                          >
+                            {linkLabel(entry.data.secondaryUrl)}
+                          </a>
+                        )}
                         {entry.data.contact && (
                           <span class="text-ink-soft">{entry.data.contact}</span>
                         )}
