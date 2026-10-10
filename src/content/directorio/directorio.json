@@ -38,5 +38,13 @@
     "state": "Ciudad de México",
     "url": "https://www.instagram.com/tatianapineda.psic/",
     "description": "Encuentros presenciales."
+  },
+  {
+    "id": "death-cafe-polanco",
+    "name": "Death Cafe Polanco",
+    "city": "Polanco",
+    "state": "Ciudad de México",
+    "url": "https://www.instagram.com/pewmaumbral/",
+    "description": "Encuentros presenciales."
   }
 ]
