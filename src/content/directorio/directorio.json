@@ -94,5 +94,13 @@
     "country": "Brasil",
     "url": "https://www.instagram.com/deathcafecaxias/",
     "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-medellin",
+    "name": "Death Cafe Medellín",
+    "city": "Medellín",
+    "country": "Colombia",
+    "url": "https://www.instagram.com/psicopaliativosyduelo/",
+    "modality": "Presencial"
   }
 ]
