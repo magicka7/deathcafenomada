@@ -159,6 +159,7 @@ const directorio = defineCollection({
     url: z.string().url().optional(),
     secondaryUrl: z.string().url().optional(),
     contact: z.string().optional(),
+    modality: z.string().optional(),
     description: z.string().optional(),
   }),
 });

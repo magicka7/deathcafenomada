@@ -5,7 +5,7 @@
     "city": "Cholula",
     "state": "Puebla",
     "url": "https://www.instagram.com/deathcafe.nomada/",
-    "description": "Encuentros presenciales."
+    "modality": "Presencial"
   },
   {
     "id": "death-cafe-guadalajara",
@@ -13,7 +13,7 @@
     "city": "Guadalajara",
     "state": "Jalisco",
     "url": "https://www.instagram.com/deathcafe.mx/",
-    "description": "Encuentros presenciales y en línea."
+    "modality": "Presencial y en línea"
   },
   {
     "id": "death-cafe-zapopan",
@@ -21,7 +21,7 @@
     "city": "Zapopan",
     "state": "Jalisco",
     "url": "https://www.instagram.com/deathdoulayura/",
-    "description": "Encuentros presenciales."
+    "modality": "Presencial"
   },
   {
     "id": "death-cafe-monterrey",
@@ -29,7 +29,7 @@
     "city": "Monterrey",
     "state": "Nuevo León",
     "url": "https://www.instagram.com/deathcafe.mty/",
-    "description": "Encuentros presenciales."
+    "modality": "Presencial"
   },
   {
     "id": "death-cafe-cdmx",
@@ -37,7 +37,7 @@
     "city": "Ciudad de México",
     "state": "Ciudad de México",
     "url": "https://www.instagram.com/tatianapineda.psic/",
-    "description": "Encuentros presenciales."
+    "modality": "Presencial"
   },
   {
     "id": "death-cafe-polanco",
@@ -45,15 +45,15 @@
     "city": "Polanco",
     "state": "Ciudad de México",
     "url": "https://www.instagram.com/pewmaumbral/",
-    "description": "Encuentros presenciales."
+    "modality": "Presencial"
   },
   {
     "id": "death-cafe-bogota",
     "name": "Death Cafe Bogotá",
     "city": "Bogotá",
     "url": "https://www.instagram.com/ivonne.tashko/",
-    "description": "Encuentros presenciales.",
-    "country": "Colombia"
+    "country": "Colombia",
+    "modality": "Presencial"
   },
   {
     "id": "death-cafe-san-rafael",
@@ -61,14 +61,30 @@
     "city": "San Rafael",
     "state": "Ciudad de México",
     "url": "https://www.instagram.com/bosquevolcancolibri/",
-    "description": "Encuentros presenciales."
+    "modality": "Presencial"
   },
   {
     "id": "death-cafe-toronto",
     "name": "Death Cafe Toronto",
     "city": "Toronto",
     "url": "https://www.instagram.com/yourlastchapter/",
-    "description": "Encuentros en línea.",
-    "country": "Canadá"
+    "country": "Canadá",
+    "modality": "En línea"
+  },
+  {
+    "id": "death-cafe-valparaiso-vina",
+    "name": "Death Cafe Valparaíso y Viña del Mar",
+    "city": "Valparaíso y Viña del Mar",
+    "country": "Chile",
+    "url": "https://www.instagram.com/yomecreolamuerte/",
+    "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-cusco",
+    "name": "Death Cafe Cusco",
+    "city": "Cusco",
+    "country": "Perú",
+    "url": "https://www.instagram.com/uncafeconlamuerte/",
+    "modality": "Presencial"
   }
 ]

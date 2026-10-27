@@ -58,6 +58,7 @@ const linkLabel = (url: string) => {
                   <th class="px-3 py-2 font-semibold">Nombre</th>
                   <th class="px-3 py-2 font-semibold">Ciudad</th>
                   <th class="px-3 py-2 font-semibold">{section.placeLabel}</th>
+                  <th class="px-3 py-2 font-semibold">Modalidad</th>
                   <th class="px-3 py-2 font-semibold">Redes</th>
                 </tr>
               </thead>
@@ -67,6 +68,7 @@ const linkLabel = (url: string) => {
                     <td class="px-3 py-2 font-semibold text-ink">{entry.data.name}</td>
                     <td class="px-3 py-2 text-ink-soft">{entry.data.city}</td>
                     <td class="px-3 py-2 text-ink-soft">{section.place(entry)}</td>
+                    <td class="px-3 py-2 text-ink-soft">{entry.data.modality}</td>
                     <td class="px-3 py-2">
                       <div class="flex flex-wrap gap-x-3 gap-y-0.5">
                         {entry.data.url && (
