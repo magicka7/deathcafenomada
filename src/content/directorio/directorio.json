@@ -86,5 +86,13 @@
     "country": "Perú",
     "url": "https://www.instagram.com/uncafeconlamuerte/",
     "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-caxias-do-sul",
+    "name": "Death Cafe Caxias do Sul",
+    "city": "Caxias do Sul",
+    "country": "Brasil",
+    "url": "https://www.instagram.com/deathcafecaxias/",
+    "modality": "Presencial"
   }
 ]

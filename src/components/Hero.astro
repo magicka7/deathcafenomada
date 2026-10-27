@@ -5,11 +5,14 @@ import EventIndexCard from "./EventIndexCard.astro";
 const events = await getCollection("events");
 const cities = await getCollection("cities");
 
-const featured =
-  events.find((e) => e.data.isFeatured) ??
-  events
-    .filter((e) => e.data.date.getTime() >= Date.now())
-    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())[0];
+const startOfToday = new Date();
+startOfToday.setUTCHours(0, 0, 0, 0);
+
+const upcoming = events
+  .filter((e) => e.data.date.getTime() >= startOfToday.getTime())
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+
+const featured = upcoming[0];
 
 const city = featured ? cities.find((c) => c.id === featured.data.citySlug) : undefined;
 
@@ -44,6 +47,8 @@ const cityLabel = city ? `${city.data.name.toLowerCase()}, ${city.data.state.toL
       </span>
     </div>
 
-    {featured && <EventIndexCard event={featured} />}
+    <div class="space-y-4">
+      {upcoming.map((event) => <EventIndexCard event={event} />)}
+    </div>
   </div>
 </section>
