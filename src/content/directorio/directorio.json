@@ -46,5 +46,29 @@
     "state": "Ciudad de México",
     "url": "https://www.instagram.com/pewmaumbral/",
     "description": "Encuentros presenciales."
+  },
+  {
+    "id": "death-cafe-bogota",
+    "name": "Death Cafe Bogotá",
+    "city": "Bogotá",
+    "url": "https://www.instagram.com/ivonne.tashko/",
+    "description": "Encuentros presenciales.",
+    "country": "Colombia"
+  },
+  {
+    "id": "death-cafe-san-rafael",
+    "name": "Death Cafe San Rafael",
+    "city": "San Rafael",
+    "state": "Ciudad de México",
+    "url": "https://www.instagram.com/bosquevolcancolibri/",
+    "description": "Encuentros presenciales."
+  },
+  {
+    "id": "death-cafe-toronto",
+    "name": "Death Cafe Toronto",
+    "city": "Toronto",
+    "url": "https://www.instagram.com/yourlastchapter/",
+    "description": "Encuentros en línea.",
+    "country": "Canadá"
   }
 ]

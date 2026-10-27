@@ -3,12 +3,26 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allEntries = await getCollection("directorio");
-const entries = allEntries.sort(
-  (a, b) =>
-    Number(b.data.state === "Puebla") - Number(a.data.state === "Puebla") ||
-    a.data.state.localeCompare(b.data.state, "es") ||
-    a.data.city.localeCompare(b.data.city, "es")
-);
+const mexico = allEntries
+  .filter((e) => !e.data.country)
+  .sort(
+    (a, b) =>
+      Number(b.data.state === "Puebla") - Number(a.data.state === "Puebla") ||
+      (a.data.state ?? "").localeCompare(b.data.state ?? "", "es") ||
+      a.data.city.localeCompare(b.data.city, "es")
+  );
+const world = allEntries
+  .filter((e) => e.data.country)
+  .sort(
+    (a, b) =>
+      a.data.country!.localeCompare(b.data.country!, "es") ||
+      a.data.city.localeCompare(b.data.city, "es")
+  );
+
+const sections = [
+  { title: "México", placeLabel: "Estado", entries: mexico, place: (e: any) => e.data.state },
+  { title: "Otros países", placeLabel: "País", entries: world, place: (e: any) => e.data.country },
+];
 
 const linkLabel = (url: string) => {
   const match = url.match(/instagram\.com\/([^/?]+)/);
@@ -18,38 +32,41 @@ const linkLabel = (url: string) => {
 
 <BaseLayout
   title="Directorio"
-  description="Otros Death Cafe independientes en México, organizados por distintas personas y colectivos."
+  description="Otros Death Cafe independientes en México y el mundo, organizados por distintas personas y colectivos."
 >
   <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
     <h1 class="font-serif-display text-3xl font-semibold text-ink sm:text-4xl">
-      Directorio de Death Cafe en México
+      Directorio de Death Cafe en México y el mundo
     </h1>
     <p class="mt-4 max-w-2xl text-ink-soft">
       Death Cafe Nómada organiza sus propios encuentros, pero no es el único.
-      Aquí reunimos otros Death Cafe independientes en México, organizados
+      Aquí reunimos otros Death Cafe independientes en México y el mundo, organizados
       por distintas personas y colectivos, para que encuentres uno cerca de
       ti aunque no sea el nuestro.
     </p>
 
-    <div class="mt-8">
-      {
-        entries.length > 0 ? (
+    {
+      sections.map((section) => (
+        <div class="mt-10">
+          <h2 class="mb-3 font-serif-display text-2xl font-semibold text-ink">
+            {section.title}
+          </h2>
           <div class="overflow-x-auto rounded-xl border border-sand">
             <table class="w-full border-collapse text-sm">
               <thead>
                 <tr class="border-b border-sand bg-cream text-left text-xs uppercase tracking-wide text-ink-soft">
                   <th class="px-3 py-2 font-semibold">Nombre</th>
                   <th class="px-3 py-2 font-semibold">Ciudad</th>
-                  <th class="px-3 py-2 font-semibold">Estado</th>
+                  <th class="px-3 py-2 font-semibold">{section.placeLabel}</th>
                   <th class="px-3 py-2 font-semibold">Redes</th>
                 </tr>
               </thead>
               <tbody>
-                {entries.map((entry) => (
+                {section.entries.map((entry) => (
                   <tr class="border-b border-sand last:border-0 odd:bg-paper even:bg-cream/40">
                     <td class="px-3 py-2 font-semibold text-ink">{entry.data.name}</td>
                     <td class="px-3 py-2 text-ink-soft">{entry.data.city}</td>
-                    <td class="px-3 py-2 text-ink-soft">{entry.data.state}</td>
+                    <td class="px-3 py-2 text-ink-soft">{section.place(entry)}</td>
                     <td class="px-3 py-2">
                       <div class="flex flex-wrap gap-x-3 gap-y-0.5">
                         {entry.data.url && (
@@ -79,13 +96,8 @@ const linkLabel = (url: string) => {
               </tbody>
             </table>
           </div>
-        ) : (
-          <p class="rounded-2xl border border-sand bg-cream p-6 text-ink-soft">
-            Estamos reuniendo el directorio. Si organizas un Death Cafe en
-            México y quieres aparecer aquí, escríbenos.
-          </p>
-        )
-      }
-    </div>
+        </div>
+      ))
+    }
   </section>
 </BaseLayout>
