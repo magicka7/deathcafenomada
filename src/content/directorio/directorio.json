@@ -102,5 +102,21 @@
     "country": "Colombia",
     "url": "https://www.instagram.com/psicopaliativosyduelo/",
     "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-oeiras",
+    "name": "Death Cafe Portugal",
+    "city": "Oeiras",
+    "country": "Portugal",
+    "url": "https://www.instagram.com/deathcafe.pt/",
+    "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-san-fernando",
+    "name": "Death Cafe San Fernando",
+    "city": "San Fernando",
+    "country": "Chile",
+    "url": "https://www.instagram.com/doulafindevida.francisca/",
+    "modality": "Presencial y en línea"
   }
 ]
