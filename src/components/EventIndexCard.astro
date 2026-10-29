@@ -19,14 +19,14 @@ const day = date.toLocaleDateString("es-MX", { day: "numeric", timeZone: "UTC" }
 const month = date.toLocaleDateString("es-MX", { month: "long", timeZone: "UTC" });
 ---
 
-<div class="relative border border-ink bg-paper shadow-[0_1px_0_rgba(48,43,41,0.06),0_6px_14px_-8px_rgba(135,63,82,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_22px_-10px_rgba(135,63,82,0.42)]">
+<div class="relative rounded-2xl border border-sand bg-paper transition-transform duration-300 hover:-translate-y-0.5">
   <span
     class="absolute left-1/2 top-3 h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-clay bg-cream"
     aria-hidden="true"
   ></span>
 
   <div class="px-5 pb-8 pt-6">
-    <span class="inline-block border border-olive px-2 py-0.5 font-mono text-xs font-bold tracking-[0.08em] text-olive">
+    <span class="inline-block rounded-full border border-olive px-2.5 py-0.5 font-mono text-xs font-bold tracking-[0.08em] text-olive">
       próximo encuentro
     </span>
 
@@ -56,7 +56,7 @@ const month = date.toLocaleDateString("es-MX", { month: "long", timeZone: "UTC" 
   </div>
 
   <span
-    class="absolute bottom-3 right-4 rotate-[-4deg] border border-terracotta px-2 py-1 font-mono text-[10px] tracking-[0.06em] text-terracotta opacity-[0.85]"
+    class="absolute bottom-3 right-4 rotate-[-4deg] rounded border border-terracotta px-2 py-1 font-mono text-[10px] tracking-[0.06em] text-terracotta opacity-[0.85]"
   >
     confirmado
   </span>
