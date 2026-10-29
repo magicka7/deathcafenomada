@@ -18,6 +18,18 @@ const cityEvents = allEvents
   .filter((e) => e.data.citySlug === city.id)
   .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 
+const startOfToday = new Date();
+startOfToday.setUTCHours(0, 0, 0, 0);
+
+const numbered = cityEvents.map((event, i) => ({
+  event,
+  n: i + 1,
+  isPast: event.data.date.getTime() < startOfToday.getTime(),
+}));
+const upcoming = numbered.filter((e) => !e.isPast);
+const past = numbered.filter((e) => e.isPast).reverse();
+const ordered = [...upcoming, ...past];
+
 const formatDate = (date: Date) => {
   const raw = date.toLocaleDateString("es-MX", {
     weekday: "long",
@@ -32,7 +44,7 @@ const formatDate = (date: Date) => {
 
 <BaseLayout title={name} description={shortDescription}>
   <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-    <a href="/ciudades/" class="text-sm font-medium text-terracotta hover:text-terracotta-dark">
+    <a href="/ciudades/" class="text-sm font-medium text-olive hover:text-olive-dark">
       ← Todas las ciudades
     </a>
 
@@ -52,15 +64,23 @@ const formatDate = (date: Date) => {
     <p class="mt-6 max-w-2xl text-ink-soft">{shortDescription}</p>
 
     <div class="mt-10 space-y-4">
-      <h2 class="font-serif-display text-xl font-semibold text-ink">Encuentros</h2>
+      <h2 class="font-serif-display text-xl font-semibold text-ink">
+        {upcoming.length > 0 ? "Próximos encuentros" : "Encuentros"}
+      </h2>
       {
-        cityEvents.length > 0 ? (
-          cityEvents.map((event, i) => {
-            const isPast = event.data.date.getTime() < Date.now();
+        ordered.length > 0 ? (
+          ordered.map(({ event, n, isPast }, i) => {
+            const isNext = !isPast && i === 0;
             return (
-              <div class="rounded-2xl border border-sand bg-paper p-6 sm:p-8">
+              <>
+                {isPast && i === upcoming.length && (
+                  <h2 class="font-serif-display pt-6 text-xl font-semibold text-ink">
+                    Encuentros realizados
+                  </h2>
+                )}
+              <div id={event.id} class="scroll-mt-24 rounded-2xl border border-sand bg-paper p-6 sm:p-8">
                 <p class="text-xs font-semibold uppercase tracking-wider text-honey">
-                  archivo n.º {i + 1} {isPast ? "· realizado" : "· próximo encuentro"}
+                  archivo n.º {n} {isPast ? "· realizado" : isNext ? "· siguiente encuentro" : "· próximo encuentro"}
                 </p>
                 <p class="mt-2 font-serif-display text-xl font-semibold text-ink sm:text-2xl">
                   {formatDate(event.data.date)} · {event.data.time}
@@ -72,7 +92,7 @@ const formatDate = (date: Date) => {
                     href={event.data.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="mt-1 inline-block text-sm font-medium text-terracotta hover:text-terracotta-dark"
+                    class="mt-3 inline-block border border-terracotta px-3 py-1.5 text-sm font-medium text-terracotta transition-colors hover:bg-terracotta hover:text-cream"
                   >
                     Ver en Google Maps ↗
                   </a>
@@ -84,6 +104,7 @@ const formatDate = (date: Date) => {
                   <p class="mt-3 text-sm text-ink-soft italic">{event.data.notes}</p>
                 )}
               </div>
+              </>
             );
           })
         ) : (

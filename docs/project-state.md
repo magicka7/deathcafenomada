@@ -16,3 +16,10 @@ Falta la parte que depende del usuario:
 
 **Siguiente paso cuando se retome:** preguntar al usuario si ya tiene cuenta
 de Google Search Console y continuar desde el paso 1.
+
+## Paleta v3 (aplicada localmente, sin deploy)
+Tokens en `src/styles/global.css`: cream #F7F3EC, paper #EEDFD3, sand #D6C1B4, vino (terracotta) #873F52, olive #456D4D (+olive-dark #2F5238), clay #BC7650 (solo detalles), ink #302B29. Links en verde, botones con borde vino (hover relleno).
+
+## Pendientes
+- Google Form/Sheet para newsletter (esperando link del usuario).
+- Directorio: faltan Death Cafe Pereira y Cali (Colombia): IG y modalidad.

@@ -36,14 +36,16 @@
   --font-sans: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
 
-  --color-cream: #f7f5f1;
-  --color-paper: #e4dad4;
-  --color-sand: #bba9a4;
-  --color-terracotta: #6b2737;
-  --color-terracotta-dark: #4a1b27;
-  --color-olive: #3f6b47;
-  --color-ink: #241f1f;
-  --color-ink-soft: #554a49;
+  --color-cream: #f7f3ec;
+  --color-paper: #eedfd3;
+  --color-sand: #d6c1b4;
+  --color-terracotta: #873f52;
+  --color-terracotta-dark: #6e2f41;
+  --color-olive: #456d4d;
+  --color-olive-dark: #2f5238;
+  --color-clay: #bc7650;
+  --color-ink: #302b29;
+  --color-ink-soft: #5a4f4b;
   --color-honey: #8a4e16;
 }
 
@@ -67,14 +69,14 @@ body {
 }
 
 .prose-cuento a {
-  color: var(--color-terracotta);
+  color: var(--color-olive);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .prose-cuento a:hover {
-  color: var(--color-terracotta-dark);
+  color: var(--color-olive-dark);
 }
 
 .prose-cuento h2 {
@@ -148,8 +150,8 @@ body {
   .rounded-2xl.bg-paper,
   .rounded-xl.bg-paper {
     box-shadow:
-      0 1px 2px rgba(36, 33, 29, 0.06),
-      0 8px 20px -6px rgba(36, 33, 29, 0.18);
+      0 1px 2px rgba(48, 43, 41, 0.06),
+      0 8px 20px -6px rgba(135, 63, 82, 0.22);
   }
 }
 

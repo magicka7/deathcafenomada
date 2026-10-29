@@ -19,9 +19,9 @@ const day = date.toLocaleDateString("es-MX", { day: "numeric", timeZone: "UTC" }
 const month = date.toLocaleDateString("es-MX", { month: "long", timeZone: "UTC" });
 ---
 
-<div class="relative border border-ink bg-paper shadow-[0_1px_2px_rgba(36,33,29,0.06),0_10px_24px_-8px_rgba(36,33,29,0.22)]">
+<div class="relative border border-ink bg-paper shadow-[0_1px_0_rgba(48,43,41,0.06),0_6px_14px_-8px_rgba(135,63,82,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_22px_-10px_rgba(135,63,82,0.42)]">
   <span
-    class="absolute left-1/2 top-3 h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-ink-soft bg-cream"
+    class="absolute left-1/2 top-3 h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-clay bg-cream"
     aria-hidden="true"
   ></span>
 
@@ -31,17 +31,23 @@ const month = date.toLocaleDateString("es-MX", { month: "long", timeZone: "UTC" 
     </span>
 
     <p class="font-serif-display mt-3 text-[18px] leading-[1.3] text-ink">
-      {weekday} {day} de {month}, {time}
+      <a
+        href={`/ciudades/${event.data.citySlug}/#${event.id}`}
+        class="underline decoration-clay decoration-1 underline-offset-4 transition-colors hover:text-olive-dark hover:decoration-olive-dark"
+        title="Ver detalles del encuentro"
+      >
+        {weekday} {day} de {month}, {time}
+      </a>
     </p>
 
-    <hr class="my-3 border-t border-dashed border-sand" />
+    <hr class="my-3 border-t border-dashed border-clay" />
 
     <p class="mb-1 text-[13px] leading-[1.5] text-ink-soft">
       <a
         href={mapUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="font-semibold text-ink underline decoration-sand underline-offset-2 hover:text-terracotta"
+        class="font-semibold text-ink underline decoration-clay underline-offset-2 transition-colors hover:text-olive-dark hover:decoration-olive-dark"
       >
         {venueName}
       </a>
