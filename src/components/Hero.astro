@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import EventIndexCard from "./EventIndexCard.astro";
+import { registrationUrl } from "../data/site";
 
 const events = await getCollection("events");
 const cities = await getCollection("cities");
@@ -45,6 +46,15 @@ const cityLabel = city ? `${city.data.name.toLowerCase()}, ${city.data.state.toL
       <span class="mt-9 block font-mono text-sm text-ink-soft">
         cupo de 15 · entrada libre · aportación voluntaria · no se requiere experiencia previa
       </span>
+
+      <a
+        href={registrationUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-6 inline-block rounded-full border border-terracotta px-5 py-2 text-sm font-semibold text-terracotta transition-colors hover:bg-terracotta hover:text-cream"
+      >
+        Regístrate ↗
+      </a>
     </div>
 
     <div class="space-y-4">
