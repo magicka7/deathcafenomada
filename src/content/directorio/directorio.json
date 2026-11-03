@@ -118,5 +118,20 @@
     "country": "Chile",
     "url": "https://www.instagram.com/doulafindevida.francisca/",
     "modality": "Presencial y en línea"
+  },
+  {
+    "id": "death-cafe-algarrobo",
+    "name": "Death Cafe Chile",
+    "city": "Algarrobo",
+    "country": "Chile",
+    "url": "https://www.instagram.com/flor_guayin/",
+    "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-taquara",
+    "name": "Death Cafe Taquara",
+    "city": "Taquara",
+    "country": "Brasil",
+    "url": "https://www.instagram.com/deathcafe.taquara/"
   }
 ]
