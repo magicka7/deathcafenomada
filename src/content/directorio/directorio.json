@@ -134,5 +134,21 @@
     "country": "Brasil",
     "url": "https://www.instagram.com/deathcafe.taquara/",
     "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-guatemala",
+    "name": "Death Cafe Guatemala",
+    "city": "Guatemala",
+    "country": "Guatemala",
+    "url": "https://www.instagram.com/death_cafe_guatemala/",
+    "modality": "Presencial"
+  },
+  {
+    "id": "death-cafe-gravatai",
+    "name": "Death Cafe Gravataí",
+    "city": "Gravataí",
+    "country": "Brasil",
+    "url": "https://www.instagram.com/deathcafeg/",
+    "modality": "Presencial"
   }
 ]
