@@ -9,7 +9,20 @@ const href = `https://translate.google.com/translate?sl=es&tl=en&u=${encodeURICo
   rel="noopener noreferrer"
   aria-label="Translate to English"
   title="Translate to English"
-  class="fixed bottom-24 right-5 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-cream font-mono text-[13px] font-semibold text-ink shadow-[0_6px_24px_rgba(36,33,29,0.28)] transition-colors hover:bg-olive hover:text-cream min-[821px]:bottom-28 min-[821px]:right-8"
+  class="fixed bottom-24 right-5 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-cream shadow-[0_6px_24px_rgba(36,33,29,0.28)] transition-transform hover:-translate-y-0.5 hover:border-olive min-[821px]:bottom-28 min-[821px]:right-8"
 >
-  EN
+  <svg
+    viewBox="0 0 60 60"
+    class="h-7 w-7 rounded-full"
+    aria-hidden="true"
+  >
+    <clipPath id="flag-circle"><circle cx="30" cy="30" r="30" /></clipPath>
+    <g clip-path="url(#flag-circle)">
+      <rect width="60" height="60" fill="#1f3a7a" />
+      <path d="M0 0L60 60M60 0L0 60" stroke="#fff" stroke-width="10" />
+      <path d="M0 0L60 60M60 0L0 60" stroke="#b3322f" stroke-width="4" />
+      <path d="M30 0V60M0 30H60" stroke="#fff" stroke-width="16" />
+      <path d="M30 0V60M0 30H60" stroke="#b3322f" stroke-width="9" />
+    </g>
+  </svg>
 </a>
